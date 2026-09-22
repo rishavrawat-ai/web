@@ -1,0 +1,23 @@
+# Workspace-level ignores
+**/node_modules/
+**/.next/
+**/.vercel/
+**/.env
+**/.env.*
+!**/.env.example
+**/*.tsbuildinfo
+**/test-results/
+**/playwright-report/
+**/coverage/
+**/uploads/
+**/media/
+*.log
+
+# Local/editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Client source documents remain local unless explicitly approved
+Home Page WHB.docx
+WhatsApp Image 2026-09-21 at 10.23.55 AM.jpeg

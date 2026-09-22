@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: workhour
+      POSTGRES_USER: workhour
+      POSTGRES_PASSWORD: workhour_local
+    ports:
+      - '55432:5432'
+    volumes:
+      - workhour-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  workhour-postgres-data:
