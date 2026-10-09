@@ -1,0 +1,61 @@
+{
+  "loginStatus": 200,
+  "updates": [
+    {
+      "method": "PATCH",
+      "url": "/api/posts/15?depth=0",
+      "httpStatus": 200,
+      "request": {
+        "title": "Admin verification published v1",
+        "slug": "verify-admin-e47feba9",
+        "type": "announcement",
+        "entryKind": "internal",
+        "_status": "published"
+      },
+      "result": {
+        "id": 15,
+        "title": "Admin verification published v1",
+        "status": "published"
+      }
+    },
+    {
+      "method": "PATCH",
+      "url": "/api/posts/15?locale=undefined&depth=0&fallback-locale=null&draft=true",
+      "httpStatus": 200,
+      "request": {
+        "title": "Admin verification draft v2",
+        "slug": "verify-admin-e47feba9",
+        "type": "announcement",
+        "entryKind": "internal",
+        "_status": "draft"
+      },
+      "result": {
+        "id": 15,
+        "title": "Admin verification draft v2",
+        "status": "draft"
+      }
+    },
+    {
+      "method": "PATCH",
+      "url": "/api/posts/15?depth=0",
+      "httpStatus": 200,
+      "request": {
+        "title": "Admin verification draft v2",
+        "slug": "verify-admin-e47feba9",
+        "type": "announcement",
+        "entryKind": "internal",
+        "_status": "published"
+      },
+      "result": {
+        "id": 15,
+        "title": "Admin verification draft v2",
+        "status": "published"
+      }
+    }
+  ],
+  "publishedVisibility": {
+    "firstPublish": true,
+    "previousVersionDuringDraft": true,
+    "republishWithoutBuild": true
+  }
+}

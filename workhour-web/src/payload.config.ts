@@ -6,7 +6,12 @@ import { fileURLToPath } from 'url'
 import { Users } from './collections/Users'
 import { Businesses } from './collections/Businesses'
 import { Media } from './collections/Media'
+import { Pages } from './collections/Pages'
+import { Services } from './collections/Services'
+import { Posts } from './collections/Posts'
+import { BrandPages } from './collections/BrandPages'
 import { Homepage } from './globals/Homepage'
+import { migrations } from './migrations'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -18,7 +23,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Businesses],
+  collections: [Users, Media, Businesses, Pages, Services, Posts, BrandPages],
   globals: [Homepage],
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -28,6 +33,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URL || '',
     },
+    prodMigrations: migrations,
   }),
   plugins: [],
 })

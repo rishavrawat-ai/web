@@ -1,6 +1,6 @@
 # Workhour Business website requirements
 
-Source reviewed: `Home Page WHB.docx` and `WhatsApp Image 2026-09-21 at 10.23.55 AM.jpeg` in the workspace. This is a requirements record only; no website has been built and no dependencies were installed.
+Source reviewed: `Home Page WHB.docx`, `sitemap WHB (2).docx`, `sitemap WHB (3).docx`, and `WhatsApp Image 2026-09-21 at 10.23.55 AM.jpeg` in the workspace. The `workhour-preview` project now contains a built, static review website with the supplied main-site copy, service pages, and individual brand detail routes. This is still a review build: production CMS integration, true subdomain hosting, and client assets/details listed under Pending decisions are not complete.
 
 ## Scope and confirmed context
 
@@ -396,16 +396,140 @@ These are flagged separately; they are not silently corrected in the exact-copy 
 
 No booking, payment, employee portal or applicant-tracking backend should be added based on the supplied requirements.
 
-## 6. Existing repository stack
+## 6. Existing repository stack and implementation status
 
-No existing website repository or application stack was found. The workspace currently contains:
+The workspace now contains two applications:
 
-- `Home Page WHB.docx`
-- `WhatsApp Image 2026-09-21 at 10.23.55 AM.jpeg`
-- This newly created `docs/requirements.md`
+- `workhour-preview`: standalone Next.js review website with the main site pages, services, Global Presence, and seven individual business detail routes. It uses local TypeScript content and is not connected to a CMS.
+- `workhour-web`: Next.js and Payload CMS application with a homepage global, business collection, media collection, and PostgreSQL adapter. Its current frontend is a simple splash page; the review website is not connected to it, and no production database or hosting configuration was verified.
 
-No `package.json`, lockfile, source directory, framework configuration, database schema, CMS configuration or deployment configuration was present. Therefore the existing repository stack is **not established**.
+The review site includes available client copy and illustrative generated visuals. The full requirements remain broader than this static checkpoint: central CMS integration, persisted announcements/news, newsletter and contact workflows, true brand subdomains, and final client assets/details are still pending. The initial project discovery note above reflects the earlier requirements-gathering stage, not the current workspace state.
 
 ## Client-instruction versus reference-asset boundary
 
 The embedded Reliance screenshots are supplied as visual/layout references. They show Reliance branding, imagery, market values, investor data, corporate claims and footer content; none of those should be copied into production. The Workhour logo JPEG is the only separately supplied brand asset found and should be treated as an asset requiring confirmation of usable quality/format before implementation.
+
+
+## Additional source copy retained from sitemap WHB (2)
+
+The following material is recorded as supplied content. The Services material is used for the Services checkpoint. About Us and Global Presence content conflicts with the existing About/Presence copy and remains pending client reconciliation; it is not silently substituted. Sitemap filename suffixes do not establish version priority.
+
+### Services
+
+SERVICES TAB
+
+WEBSITE DESIGNING
+Most websites fail not because they look bad, but because they fail to guide visitors toward taking action. Your website is often the very first interaction a potential customer has with your business. If it’s slow, confusing on mobile, or hard to navigate, they will simply click away to a competitor.
+We blend intuitive user experience (UX), strategic messaging, and modern design to create digital spaces that look great, run fast, and drive real business revenue around the clock.
+What We Build For You
+Every business is different, which is why we don't believe in one-size-fits-all templates. Every site we build is tailored to your specific audience and industry.
+Custom Web Design & UX: Visually striking layouts engineered around user behavior to increase engagement and conversions.
+Mobile-First Development: Flawless, responsive performance on phones, tablets, and desktops alike.
+E-Commerce Stores: Secure, high-converting online shops built on platforms like Shopify or WooCommerce that make buying effortless.
+Website Redesigns: Fresh, modern overhauls for outdated or sluggish websites that need a new lease on life.
+SEO & Performance Tuning: Lightning-fast load times and clean site architecture so search engines love your site as much as your users do.
+
+
+
+
+
+
+
+
+
+
+
+CONTENT ANIMATION
+Dense PDFs, dry compliance manuals, and text-heavy textbooks struggle to hold attention. Whether you are training a global corporate workforce or teaching complex scientific concepts to students, visual motion transforms raw information into memorable experiences.
+We create custom 2D, 3D, and motion-graphic animations that simplify the complex, boost retention, and keep your audience engaged from the first frame to the last.
+Built for Enterprises: Visuals That Drive Alignment & Action
+In the corporate world, clarity is currency. We help businesses streamline communication, accelerate employee onboarding, and market complex products through high-fidelity visual storytelling.
+Product Explainers & Demos: Turn complex software architectures, industrial hardware, or SaaS platforms into crisp, easy-to-understand animated explainer videos that help sales teams close deals faster.
+Corporate L&D and Onboarding: Replace passive training documents with animated micro-learning modules. Improve completion rates and long-term knowledge retention across global teams.
+Internal Comms & Change Management: Roll out company-wide strategic initiatives, security protocols, and policy updates using visual narratives that build alignment without corporate jargon.
+Data & Infographic Animation: Convert dense financial reports, annual reviews, and market data into clean, dynamic animated infographics for board meetings and investor decks.
+Purpose-Built for Education: Visual Learning That Sticks
+Modern learners respond to visual-first education. We partner with schools, universities, publishing houses, and EdTech platforms to build curriculum-aligned animated content that makes learning intuitive.
+Curriculum-Aligned STEM & Humanities Modules: Bring abstract concepts to life—from molecular biology and physics mechanics to historical events—making difficult subjects approachable for students.
+EdTech & LMS-Ready Assets: Modular animated videos built specifically to integrate into Learning Management Systems (LMS), mobile learning apps, and digital classrooms.
+Interactive Micro-Lessons: Short, high-retention 1-to-3 minute animated videos engineered to match modern student attention spans and bite-sized learning preferences.
+Teacher & Classroom Visual Tools: Engaging animated presentations that help educators break down complex topics and spark active classroom discussions.
+A Simple, Collaborative Process
+Creating high-quality animation shouldn't feel complicated or unpredictable. We keep our workflow structured and transparent every step of the way.
+Discovery & Scriptwriting: We align on your core goals, target audience, and key learning outcomes to write a visual-first script.
+Storyboarding & Visual Style: You review full visual storyboards and style frames before animation starts, ensuring complete alignment on tone and aesthetic.
+Animation & Sound Design: Our animators bring the graphics to life, combining professional voiceover, custom audio, and sound effects.
+Delivery & LMS Export: We deliver optimized, high-resolution video files ready for web, broadcast, mobile apps, or direct LMS deployment.
+
+SEO & MARKETING
+As a growing business, you don't have budget to burn on vague promises. You need your marketing dollars to work as hard as you do. Far too many SMEs get trapped paying monthly agency fees only to receive glossy PDF reports filled with vanity metrics—like "clicks" and "reach"—while their phones stay quiet and revenue remains flat.
+We take a different approach. We focus exclusively on what actually keeps your doors open: qualified leads, phone calls, quote requests, and measurable sales.
+Marketing Services Built Around Your Bottom Line
+Whether you operate a local trade service, a professional firm, a healthcare practice, or a specialized B2B company, our growth framework is tailored to match how your specific customers make buying decisions.
+Search Engine Optimization (SEO): Put your business directly in front of buyers at the exact moment they search for your products or services on Google. From local map pack rankings to nationwide search visibility, we build sustainable organic presence.
+Targeted Paid Search & Social Ads: Stop wasting money on broad ad campaigns. We build hyper-focused Google Ads and social media campaigns engineered to capture high-intent buyers while keeping your cost-per-lead low.
+Conversion-Focused Content Marketing: Your website needs to do more than look nice—it needs to sell. We write clear, persuasive website copy, service pages, and guides that answer customer questions and earn trust fast.
+Local Brand & Reputation Management: Turn satisfied clients into your strongest sales force. We help you systematically capture online reviews, optimize your Google Business Profile, and establish market dominance in your region.
+
+
+### Global Presence and About Us (pending conflict review)
+
+GLOBAL PRESENCE
+Asia: India, Malaysia, Australia
+Middle East: UAE
+Africa: Kenya, Zimbabwe, Malawi, Rwanda, 
+Canada
+USA: Mexico
+
+ABOUT US
+Global Expansion Made Simple, Scalable, and Risk-Free
+At WorkHour Business, we empower organizations to expand their capabilities, establish global teams, and scale seamless operations around the world—without the financial risk, legal friction, and infrastructure complexity that typically come with entering foreign markets.
+From Ideation to Execution, we serve as your trusted global partner, delivering complete multicultural business setup, full regulatory compliance, local hiring, and strategic consulting. With client centers spanning four continents, we provide the physical, digital, and operational groundwork required for businesses of all sizes to thrive anywhere on the map.
+Our Vision
+To create a borderless global economy where any business, regardless of size, can seamlessly build international teams, launch new operations, and drive worldwide growth without friction.
+Our Mission
+To deliver a flexible, neutral, and scalable global infrastructure that simplifies international expansion. We eliminate the risk, heavy capital requirements, and administrative burdens of setting up direct foreign entities—enabling our clients to focus entirely on their core mission, performance, and strategic execution.
+Core Values
+Growth Without Friction: We break down complex regulatory, cultural, and logistical barriers so businesses can enter new markets with speed and confidence.
+Absolute Compliance & Integrity: We protect our clients by ensuring 100% adherence to local labor laws, tax codes, HR mandates, and international business regulations.
+Global Agility, Local Mastery: We combine broad international reach with deep local market expertise, ensuring your operations are culturally attuned and operationally sound.
+Transparency & Shared Success: We build neutral, trusted partnerships grounded in measurable outcomes, performance-driven KPIs, and clear communication.
+Scalable Innovation: We build flexible infrastructure designed to grow effortlessly alongside your expanding workforce and business goals.
+The "WorkHour Business In-House" Advantage
+Setting up a traditional direct presence in a foreign country can take months of legal setup, heavy capital expenditure, and ongoing compliance oversight. The WorkHour Business In-House offering solves this problem by providing a turnkey, on-the-ground operational foundation in every market we operate in.
+When you partner with us, your company gains immediate access to a complete global execution engine:
+Global Recruitment Engine: Source, hire, and onboard top-tier local talent tailored to your exact industry requirements.
+Turnkey Infrastructure & Office Space: Secure physical workspaces, technology infrastructure, and travel support for your international teams without long-term commercial lease commitments.
+End-to-End HR & Payroll Services: Ensure flawless monthly payroll execution, tax withholdings, benefits management, and local labor law compliance.
+Go-To-Market (GTM) Strategy & Consulting: Leverage localized market intelligence, strategic entry planning, and performance management aligned with clear business KPIs.
+Built for Growing SMBs and Global Enterprises
+Whether you are a fast-growing small-to-medium enterprise (SMB) testing your first overseas market or an established organization looking to optimize global delivery centers, WorkHour Business provides the agility of an in-house team with the safety of an established global partner.
+We remove the risk so you can capture the opportunity.
+Ready to Expand Your Global Footprint?
+Discover how WorkHour Business can help you establish your next international office, recruit world-class talent, and launch in new markets in weeks—not years.
+[ Schedule a Global Strategy Call ]      [ Explore Our Client Centers ]
+ 
+
+
+
+## Content reconciliation notes for the About Us and business checkpoint
+
+### Supplied wording differences retained for client review
+
+- **About Us overview risk wording:** the existing preview introduction describes expansion as �risk-aware�; sitemap WHB (2) titles its new overview �Risk-Free� and says the service is delivered without financial risk. The new sitemap copy is shown in the About overview as requested. Confirm whether �risk-free� is the approved claim before production publication.
+- **Leaders Pinnacle positioning:** Home Page WHB(1) describes a specialist B2B event management company with a named regional presence and lists trade expos, bespoke events, webinars and podcasts. Both sitemaps describe a �global powerhouse,� cite �decades� of experience, and add international conferences, summits, exhibitions and strategic market intelligence. The detail page retains these supplied descriptions in a consolidated overview; confirm the approved positioning and experience claim.
+- **Inceptura embedded-partner sentence:** the Home Page introduction and sitemap overview repeat the same sentence about operating as an embedded extension of client leadership teams. It is shown once in the detail content.
+
+The expanded business copy common to sitemap WHB (2) and (3) is consolidated into named sections on the detail pages. Repeated paragraphs are rendered once. Homepage summaries use shorter descriptions while the full supplied content remains on the corresponding detail page. Remunerax and Elevatrain retain their existing supplied copy because their sitemap headings are empty.
+
+## Provisional Global Presence grouping (checkpoint)
+
+Status: **Provisional; pending client confirmation.** This list is separate from the older country and regional-centre copy retained earlier in this requirements record. Do not merge the two lists.
+
+- Asia: India, Malaysia
+- Oceania: Australia
+- Middle East: UAE
+- Africa: Kenya, Zimbabwe, Malawi, Rwanda
+- North America: Canada, Mexico
+
+Sitemap WHB (2) places Australia under Asia and labels Mexico as �USA: Mexico�. For this preview, Australia is grouped under Oceania and Mexico under North America. The source does not confirm the USA as a separate location, so no separate USA entry is added. Confirm the groupings and country list with the client before treating them as final.

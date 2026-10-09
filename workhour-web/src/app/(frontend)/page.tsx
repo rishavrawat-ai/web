@@ -1,26 +1,22 @@
-import Image from 'next/image'
-import React from 'react'
-import './styles.css'
+import { Homepage } from '../../components/homepage/Homepage'
+import { getPublishedHomepageData } from '../../lib/homepage'
 
-export default function HomePage() {
-  return (
-    <main className="min-h-screen bg-[#071b33] text-white">
-      <section className="mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center px-6 py-16 text-center">
-        <Image
-          priority
-          alt="Workhour Business"
-          className="mb-12 h-auto w-[min(420px,90vw)]"
-          height={111}
-          src="/workhour-business-logo.jpeg"
-          width={534}
-        />
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-[#42b8b0]">
-          WorkHour Business
-        </p>
-        <h1 className="font-serif text-5xl leading-tight tracking-tight text-white sm:text-7xl">
-          Together We Thrive
-        </h1>
-      </section>
-    </main>
-  )
+// Payload's Local API reads PostgreSQL directly and is not part of Next's data
+// cache. Render this route per request so a newly published edit appears
+// without a rebuild or stale full-route cache.
+export const dynamic = 'force-dynamic'
+
+export default async function HomePage() {
+  let homepageData
+  let loadError = false
+
+  try {
+    homepageData = await getPublishedHomepageData()
+  } catch (error) {
+    console.error('Unable to load published homepage content.', error)
+    homepageData = { homepage: null, businesses: [] }
+    loadError = true
+  }
+
+  return <Homepage {...homepageData} loadError={loadError} />
 }

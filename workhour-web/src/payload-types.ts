@@ -70,6 +70,10 @@ export interface Config {
     users: User;
     media: Media;
     businesses: Business;
+    pages: Page;
+    services: Service;
+    posts: Post;
+    'brand-pages': BrandPage;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -80,6 +84,10 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     businesses: BusinessesSelect<false> | BusinessesSelect<true>;
+    pages: PagesSelect<false> | PagesSelect<true>;
+    services: ServicesSelect<false> | ServicesSelect<true>;
+    posts: PostsSelect<false> | PostsSelect<true>;
+    'brand-pages': BrandPagesSelect<false> | BrandPagesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -182,7 +190,154 @@ export interface Business {
   logo?: (number | null) | Media;
   image?: (number | null) | Media;
   websiteUrl?: string | null;
+  /**
+   * Configured destination for this brand site. Leave blank until its public host is confirmed.
+   */
+  brandSiteUrl?: string | null;
+  brandPrimaryColor?: string | null;
+  brandAccentColor?: string | null;
+  brandBackgroundColor?: string | null;
   displayOrder: number;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages".
+ */
+export interface Page {
+  id: number;
+  title: string;
+  slug: string;
+  eyebrow?: string | null;
+  introduction: string;
+  body?: string | null;
+  sections?:
+    | {
+        anchor?: string | null;
+        eyebrow?: string | null;
+        heading: string;
+        paragraphs?:
+          | {
+              text: string;
+              id?: string | null;
+            }[]
+          | null;
+        items?:
+          | {
+              title: string;
+              text?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        image?: (number | null) | Media;
+        cta?: {
+          label?: string | null;
+          url?: string | null;
+        };
+        ctaSecondary?: {
+          label?: string | null;
+          url?: string | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services".
+ */
+export interface Service {
+  id: number;
+  title: string;
+  slug: string;
+  displayOrder: number;
+  summary?: string | null;
+  introduction: string;
+  sections?:
+    | {
+        sectionGroup?: ('general' | 'enterprise' | 'education' | 'process') | null;
+        heading: string;
+        body: string;
+        image?: (number | null) | Media;
+        cta?: {
+          label?: string | null;
+          url?: string | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
+  image?: (number | null) | Media;
+  cta?: {
+    label?: string | null;
+    url?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts".
+ */
+export interface Post {
+  id: number;
+  title: string;
+  slug: string;
+  type: 'announcement' | 'news-media';
+  entryKind: 'internal' | 'external';
+  excerpt: string;
+  image?: (number | null) | Media;
+  body?: string | null;
+  publicationDate: string;
+  externalUrl?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "brand-pages".
+ */
+export interface BrandPage {
+  id: number;
+  business: number | Business;
+  title: string;
+  slug: string;
+  pageType: 'page' | 'service';
+  displayOrder: number;
+  eyebrow?: string | null;
+  summary?: string | null;
+  introduction?: string | null;
+  sections?:
+    | {
+        heading: string;
+        body?: string | null;
+        paragraphs?:
+          | {
+              text: string;
+              id?: string | null;
+            }[]
+          | null;
+        items?:
+          | {
+              title: string;
+              text?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        image?: (number | null) | Media;
+        cta?: {
+          label?: string | null;
+          url?: string | null;
+        };
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -222,6 +377,22 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'businesses';
         value: number | Business;
+      } | null)
+    | ({
+        relationTo: 'pages';
+        value: number | Page;
+      } | null)
+    | ({
+        relationTo: 'services';
+        value: number | Service;
+      } | null)
+    | ({
+        relationTo: 'posts';
+        value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'brand-pages';
+        value: number | BrandPage;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -319,7 +490,157 @@ export interface BusinessesSelect<T extends boolean = true> {
   logo?: T;
   image?: T;
   websiteUrl?: T;
+  brandSiteUrl?: T;
+  brandPrimaryColor?: T;
+  brandAccentColor?: T;
+  brandBackgroundColor?: T;
   displayOrder?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages_select".
+ */
+export interface PagesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  eyebrow?: T;
+  introduction?: T;
+  body?: T;
+  sections?:
+    | T
+    | {
+        anchor?: T;
+        eyebrow?: T;
+        heading?: T;
+        paragraphs?:
+          | T
+          | {
+              text?: T;
+              id?: T;
+            };
+        items?:
+          | T
+          | {
+              title?: T;
+              text?: T;
+              id?: T;
+            };
+        image?: T;
+        cta?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+            };
+        ctaSecondary?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services_select".
+ */
+export interface ServicesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  displayOrder?: T;
+  summary?: T;
+  introduction?: T;
+  sections?:
+    | T
+    | {
+        sectionGroup?: T;
+        heading?: T;
+        body?: T;
+        image?: T;
+        cta?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+            };
+        id?: T;
+      };
+  image?: T;
+  cta?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "posts_select".
+ */
+export interface PostsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  type?: T;
+  entryKind?: T;
+  excerpt?: T;
+  image?: T;
+  body?: T;
+  publicationDate?: T;
+  externalUrl?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "brand-pages_select".
+ */
+export interface BrandPagesSelect<T extends boolean = true> {
+  business?: T;
+  title?: T;
+  slug?: T;
+  pageType?: T;
+  displayOrder?: T;
+  eyebrow?: T;
+  summary?: T;
+  introduction?: T;
+  sections?:
+    | T
+    | {
+        heading?: T;
+        body?: T;
+        paragraphs?:
+          | T
+          | {
+              text?: T;
+              id?: T;
+            };
+        items?:
+          | T
+          | {
+              title?: T;
+              text?: T;
+              id?: T;
+            };
+        image?: T;
+        cta?:
+          | T
+          | {
+              label?: T;
+              url?: T;
+            };
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
