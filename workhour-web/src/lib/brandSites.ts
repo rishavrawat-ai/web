@@ -1,29 +1,24 @@
-import { headers } from 'next/headers'
 import { createLocalReq, getPayload } from 'payload'
 
 import config from '@payload-config'
 import type { BrandPage, Business } from '../payload-types'
-import { resolveBrandSlug } from './brandHosts'
+import { configuredHostForBrand } from './brandHosts'
 
 function relationID(value: number | Business | null | undefined): number | null {
   return typeof value === 'number' ? value : value && typeof value === 'object' ? Number(value.id) : null
 }
 
-async function makePublicRequest(payload: Awaited<ReturnType<typeof getPayload>>) {
-  const incomingHeaders = await headers()
-  return createLocalReq({ req: { headers: new Headers(incomingHeaders), user: null } }, payload)
+async function makePublicRequest(payload: Awaited<ReturnType<typeof getPayload>>, brandSlug: string) {
+  const host = configuredHostForBrand(brandSlug)
+  if (!host) return null
+  const reqHeaders = new Headers({ host, 'x-brand-site-host': host })
+  return createLocalReq({ req: { headers: reqHeaders, user: null } }, payload)
 }
 
-export async function getResolvedBrandSite(): Promise<{ business: Business; services: BrandPage[] } | null> {
-  const requestHeaders = await headers()
-  const brandSlug = resolveBrandSlug(requestHeaders.get('x-brand-site-host') ?? requestHeaders.get('host'))
-  console.log('[brand-host-check]', requestHeaders.get('host'), requestHeaders.get('x-brand-site-host'), brandSlug)
-  if (!brandSlug) return null
-
+export async function getResolvedBrandSite(brandSlug: string): Promise<{ business: Business; services: BrandPage[] } | null> {
   const payload = await getPayload({ config })
-  const reqHeaders = new Headers(requestHeaders)
-  reqHeaders.set('x-brand-site-host', requestHeaders.get('x-brand-site-host') ?? requestHeaders.get('host') ?? '')
-  const req = await createLocalReq({ req: { headers: reqHeaders, user: null } }, payload)
+  const req = await makePublicRequest(payload, brandSlug)
+  if (!req) return null
   const businesses = await payload.find({
     collection: 'businesses',
     depth: 2,
@@ -36,7 +31,6 @@ export async function getResolvedBrandSite(): Promise<{ business: Business; serv
     where: { and: [{ slug: { equals: brandSlug } }, { _status: { equals: 'published' } }] },
   })
   const business = businesses.docs.find((item) => item._status === 'published' && item.slug === brandSlug)
-  console.log('[brand-business-check]', businesses.docs.map(({ slug, _status }) => [slug, _status]))
   if (!business) return null
 
   const result = await payload.find({
@@ -55,7 +49,6 @@ export async function getResolvedBrandSite(): Promise<{ business: Business; serv
     ] },
     sort: 'displayOrder',
   })
-  console.log('[brand-service-check]', result.totalDocs)
   const services = result.docs.filter((page) => page._status === 'published'
     && page.pageType === 'service'
     && relationID(page.business) === Number(business.id))
@@ -63,9 +56,10 @@ export async function getResolvedBrandSite(): Promise<{ business: Business; serv
   return { business, services }
 }
 
-export async function getPublishedBrandPage(business: Business, slug: string, pageType: 'page' | 'service'): Promise<BrandPage | null> {
+export async function getPublishedBrandPage(business: Business, brandSlug: string, slug: string, pageType: 'page' | 'service'): Promise<BrandPage | null> {
   const payload = await getPayload({ config })
-  const req = await makePublicRequest(payload)
+  const req = await makePublicRequest(payload, brandSlug)
+  if (!req) return null
   const result = await payload.find({
     collection: 'brand-pages',
     depth: 2,
@@ -82,7 +76,6 @@ export async function getPublishedBrandPage(business: Business, slug: string, pa
       { _status: { equals: 'published' } },
     ] },
   })
-  console.log('[brand-page-check]', slug, pageType, result.docs.map(({ slug: pageSlug, _status }) => [pageSlug, _status]))
   return result.docs.find((page) => page._status === 'published'
     && page.pageType === pageType
     && page.slug === slug

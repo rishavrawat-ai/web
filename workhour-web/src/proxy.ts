@@ -27,13 +27,12 @@ export function proxy(request: NextRequest) {
 
   const forwardedHeaders = new Headers(request.headers)
   forwardedHeaders.set('x-brand-site-host', request.headers.get('host') ?? '')
-  console.log('[brand-proxy-check]', request.headers.get('host'), forwardedHeaders.get('x-brand-site-host'))
   if (shouldPassThrough(request.nextUrl.pathname)) return NextResponse.next({ request: { headers: forwardedHeaders } })
 
   const destination = request.nextUrl.clone()
   destination.pathname = request.nextUrl.pathname === '/'
-    ? '/brand-site-internal/home'
-    : `/brand-site-internal${request.nextUrl.pathname}`
+    ? `/brand-site-internal/${brandSlug}/home`
+    : `/brand-site-internal/${brandSlug}${request.nextUrl.pathname}`
   return NextResponse.rewrite(destination, { request: { headers: forwardedHeaders } })
 }
 

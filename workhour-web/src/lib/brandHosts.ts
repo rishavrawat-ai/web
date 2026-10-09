@@ -30,3 +30,10 @@ export function resolveBrandSlug(host: string | null | undefined, configured?: s
   if (!hostname) return null
   return parseBrandHostMap(configured).get(hostname) ?? null
 }
+
+export function configuredHostForBrand(brandSlug: string, configured?: string): string | null {
+  for (const [hostname, slug] of parseBrandHostMap(configured)) {
+    if (slug === brandSlug) return hostname
+  }
+  return null
+}
