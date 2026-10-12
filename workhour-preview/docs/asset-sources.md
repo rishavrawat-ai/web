@@ -9,7 +9,6 @@
 - `public/business-elevatrain.webp` — illustrative corporate learning and workshop scene.
 - `public/business-thinkrunspace.webp` — illustrative flexible workspace scene.
 - `public/business-leaders-pinnacle.webp` — illustrative conference and professional event scene.
-- `public/hero-workhour-editorial.webp` — abstract navy and teal editorial illustration.
 - `public/service-web-design.webp`, `service-content-motion.webp`, and `service-search-growth.webp` — abstract illustrations for the three Workhour Business digital services.
 - `public/feature-ignita.webp`, `feature-mindfulness.webp`, and `feature-business-events.webp` — newly AI-generated, text-free editorial illustrations for the announcement and media cards. They are abstract compositions, not depictions of a named venue, organization, or completed event.
 
