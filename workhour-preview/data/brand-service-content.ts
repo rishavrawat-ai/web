@@ -59,3 +59,4 @@ const descriptions: Record<string, BrandServiceCopy> = {
 export function getBrandServiceCopy(brand: BrandSite, title: string): BrandServiceCopy | undefined {
   return descriptions[`${brand.slug}|${title}`]
 }
+

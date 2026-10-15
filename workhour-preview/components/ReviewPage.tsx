@@ -48,7 +48,7 @@ function ContactPage() {
 
 function AnnouncementPage() {
   const featured = media.find(item => item.slug === 'ignita')!
-  return <section className="announcement-empty" id="ignita"><Image src={featured.image} alt="Abstract amber light and glass forms; illustrative editorial artwork" width={1200} height={675} sizes="(max-width: 700px) 100vw, 65vw" /><p className="eyebrow teal">Featured announcement</p><h2>IGNITA</h2><p>No announcement details are published in the current archive.</p><Link className="text-link" href="/businesses/leaders-pinnacle">Explore event services <span aria-hidden="true">↗</span></Link></section>
+  return <section className="announcement-page-feature" id="ignita"><div className="announcement-page-image"><Image src={featured.image} alt="Abstract amber light and glass forms; illustrative editorial artwork" fill sizes="(max-width: 700px) 100vw, 62vw" /></div><div className="announcement-page-copy"><p className="eyebrow teal">Featured announcement</p><h2>IGNITA</h2></div></section>
 }
 
 function NewsMediaPage() {
