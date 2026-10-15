@@ -5,14 +5,14 @@ Review target: every listed route at 390px and 1440px; representative complex pa
 ## Main Workhour site (19 routes)
 
 - [x] `/` — home carousel, business tabs, brand destinations, featured announcement, three media cards, service links, footer.
-- [x] `/about` — story, impact, responsible business, presence; menu anchors match sections.
+- [x] `/about` — nine sections in the requested order, with matching About navigation anchors and coordinated Vision/Mission cards.
 - [x] `/businesses` — seven illustrated business cards link directly to their standalone brand experiences.
 - [x] `/businesses/inceptura`, `/businesses/employaa`, `/businesses/remunerax`, `/businesses/go-travel-global`, `/businesses/elevatrain`, `/businesses/thinkrunspace`, `/businesses/leaders-pinnacle` — business profiles with matching brand links.
 - [x] `/services` — three service cards and detail destinations.
 - [x] `/services/website-designing`, `/services/content-animation`, `/services/seo-marketing` — service audience, process, scope, benefits, and related-service navigation.
 - [x] `/careers` — group work areas and current-opportunity empty state.
-- [x] `/contact` — useful business and service navigation.
-- [x] `/global-presence` — qualified country groupings.
+- [x] `/contact` — validated required enquiry fields, honest submission-unavailable state, business and service navigation.
+- [x] `/global-presence` — Natural Earth country map and accessible provisional country list from one data source.
 - [x] `/announcements` — IGNITA title and honest no-details archive state.
 - [x] `/news-media` — three supplied media topics, illustrative assets, and relevant service destinations.
 

@@ -1,0 +1,65 @@
+{
+  "widths": [
+    390,
+    768,
+    1366,
+    1440
+  ],
+  "results": [
+    {
+      "width": 390,
+      "emptyRequiredFields": 3,
+      "invalidRequiredFields": 3,
+      "emailLabel": {
+        "top": 500,
+        "bottom": 523,
+        "scrollY": 248,
+        "height": 1000
+      },
+      "submissionUnavailable": true,
+      "optionalEnquirySelectHidden": true
+    },
+    {
+      "width": 768,
+      "emptyRequiredFields": 3,
+      "invalidRequiredFields": 3,
+      "emailLabel": {
+        "top": 501,
+        "bottom": 524,
+        "scrollY": 163,
+        "height": 1000
+      },
+      "submissionUnavailable": true,
+      "optionalEnquirySelectHidden": true
+    },
+    {
+      "width": 1366,
+      "emptyRequiredFields": 3,
+      "invalidRequiredFields": 3,
+      "emailLabel": {
+        "top": 500,
+        "bottom": 523,
+        "scrollY": 376,
+        "height": 1000
+      },
+      "submissionUnavailable": true,
+      "optionalEnquirySelectHidden": true
+    },
+    {
+      "width": 1440,
+      "emptyRequiredFields": 3,
+      "invalidRequiredFields": 3,
+      "emailLabel": {
+        "top": 501,
+        "bottom": 523,
+        "scrollY": 376,
+        "height": 1000
+      },
+      "submissionUnavailable": true,
+      "optionalEnquirySelectHidden": true
+    }
+  ],
+  "errors": [],
+  "screenshotsUpdated": 12,
+  "output": "C:\\Users\\User\\Desktop\\client-assets\\workhour-preview-task\\workhour-preview\\docs\\latest-client-feedback\\after"
+}

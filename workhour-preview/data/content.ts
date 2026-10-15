@@ -1,3 +1,5 @@
+import { presenceCountries } from './presence-countries'
+
 export type Business = { slug: string; name: string; intro: string; detail: string; mark: string; image: string; sections?: string[]; bullets?: string[] }
 
 export const heroSlides = [
@@ -76,7 +78,7 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: 'content-animation', title: 'Content Animation',
+    slug: 'content-animation', title: 'Content Animation Studio',
     intro: 'We create 2D, 3D, and motion-graphic content to make complex subjects easier to follow and visually engaging.',
     description: 'Detailed processes, policies, and learning materials can be difficult to absorb in a text-only format. A carefully planned visual story can give an audience another way to understand the key ideas.',
     sections: [
@@ -111,13 +113,10 @@ export const services: Service[] = [
   },
 ]
 
-export const globalPresence = [
-  { region: 'Asia', countries: ['India', 'Malaysia'] },
-  { region: 'Oceania', countries: ['Australia'] },
-  { region: 'Middle East', countries: ['UAE'] },
-  { region: 'Africa', countries: ['Kenya', 'Zimbabwe', 'Malawi', 'Rwanda'] },
-  { region: 'North America', countries: ['Canada', 'Mexico'] },
-]
+export const globalPresence = Array.from(new Set(presenceCountries.map(({ region }) => region)), (region) => ({
+  region,
+  countries: presenceCountries.filter((country) => country.region === region).map(({ name }) => name),
+}))
 
 export const media = [
   { slug: 'ignita', title: 'IGNITA', kicker: 'Featured announcement', tone: 'sunset', image: '/feature-ignita.webp', alt: 'Abstract amber light and glass forms in a dark architectural space', text: 'A featured Workhour Business announcement.', link: 'View announcement', href: '/announcements#ignita' },
