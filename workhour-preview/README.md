@@ -1,16 +1,8 @@
-# Workhour Business design preview
+# Workhour Business frontend
 
-Standalone Vercel-ready Next.js review site. It uses local typed content and runs without Payload, PostgreSQL, secrets or external services.
+Standalone Next.js frontend using local typed content. The main site and seven path-routed brand experiences include all requested main pages and 39 brand service detail pages. CMS, database, and R2 integrations are outside this frontend and remain paused.
 
-## Included pages
-
-- Home page with the four rotating banner lines, seven-business showcase, complete supplied value copy, featured announcement, and three requested media cards.
-- About Us, Businesses, Careers, Announcement, News & Media, Contact, Services, and Global Presence pages.
-- Individual detail routes for all seven businesses at `/businesses/{slug}`.
-
-Search currently searches the local review content. Forms remain disabled where the client has not provided a delivery provider or contact destination. Brand detail routes provide reviewable pages; production subdomains still require a confirmed domain map and DNS/hosting setup.
-
-## Run in Windows PowerShell
+## Run locally
 
 ```powershell
 cd C:\Users\User\Desktop\client-assets\workhour-preview
@@ -29,8 +21,16 @@ npm run build
 npm run start
 ```
 
-## Vercel
+## Deployment
 
-Import the project with `workhour-preview` as the root directory. Framework preset: Next.js. Build command: `npm run build`. No environment variables are required. Deployment is intentionally not configured or performed.
+The existing Vercel project is `workhour-preview`, linked to `rishavrawat-ai/web` with `workhour-preview` as its Root Directory. Git pushes to `main` trigger production deployments at https://workhour-preview.vercel.app. The frontend requires no environment variables.
 
-This is a design preview. Forms are disabled, search is local-only, the logo is the supplied raster asset, and unresolved media uses abstract placeholders. Payload integration and subdomain routing remain outside this checkpoint.
+## Content and factual boundaries
+
+- Contact pages provide service and business navigation because no public contact destination was supplied. They do not simulate enquiry or newsletter submissions.
+- Market groupings are qualified planning context, not confirmation of offices or local service availability.
+- Employee Self Service Portal is described as a service concept; no employee portal or login is implemented.
+- Announcement and media pages use only supplied titles and do not invent publication details, awards, credentials, or completed events.
+- Generated scenes are illustrative and do not depict actual Workhour staff, offices, clients, or completed events.
+
+Internal route, asset, copy-proposal, and factual-gap notes are in `docs/`.

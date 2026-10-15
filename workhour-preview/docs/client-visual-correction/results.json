@@ -1,0 +1,416 @@
+{
+  "base": "http://localhost:3012",
+  "captures": [
+    {
+      "route": "/",
+      "width": 390,
+      "selector": "#businesses",
+      "file": "docs/client-visual-correction/after/businesses-390.png"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "selector": ".values-section",
+      "file": "docs/client-visual-correction/after/values-390.png"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "selector": ".announcement",
+      "file": "docs/client-visual-correction/after/ignita-390.png"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "selector": ".media-section",
+      "file": "docs/client-visual-correction/after/media-cards-390.png"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "selector": ".home-services",
+      "file": "docs/client-visual-correction/after/main-services-390.png"
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "selector": ".footer",
+      "file": "docs/client-visual-correction/after/main-footer-390.png"
+    },
+    {
+      "route": "/brands/inceptura/about",
+      "width": 390,
+      "selector": ".brand-copy-section:nth-of-type(1)",
+      "file": "docs/client-visual-correction/after/ideation-to-execution-390.png"
+    },
+    {
+      "route": "/brands/inceptura/about",
+      "width": 390,
+      "selector": ".brand-copy-section:nth-of-type(3)",
+      "file": "docs/client-visual-correction/after/problem-statement-390.png"
+    },
+    {
+      "route": "/brands/inceptura/offerings",
+      "width": 390,
+      "selector": ".brand-service-grid",
+      "file": "docs/client-visual-correction/after/inceptura-offerings-390.png"
+    },
+    {
+      "route": "/brands/thinkrunspace",
+      "width": 390,
+      "selector": ".brand-contact-strip",
+      "file": "docs/client-visual-correction/after/find-the-right-service-390.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings",
+      "width": 390,
+      "selector": ".brand-service-grid",
+      "file": "docs/client-visual-correction/after/thinkrunspace-offerings-390.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings/co-working-spaces",
+      "width": 390,
+      "selector": ".brand-detail-main",
+      "file": "docs/client-visual-correction/after/thinkrunspace-service-detail-390.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings/co-working-spaces",
+      "width": 390,
+      "selector": ".brand-site-footer",
+      "file": "docs/client-visual-correction/after/brand-footer-390.png"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "selector": "#businesses",
+      "file": "docs/client-visual-correction/after/businesses-768.png"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "selector": ".values-section",
+      "file": "docs/client-visual-correction/after/values-768.png"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "selector": ".announcement",
+      "file": "docs/client-visual-correction/after/ignita-768.png"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "selector": ".media-section",
+      "file": "docs/client-visual-correction/after/media-cards-768.png"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "selector": ".home-services",
+      "file": "docs/client-visual-correction/after/main-services-768.png"
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "selector": ".footer",
+      "file": "docs/client-visual-correction/after/main-footer-768.png"
+    },
+    {
+      "route": "/brands/inceptura/about",
+      "width": 768,
+      "selector": ".brand-copy-section:nth-of-type(1)",
+      "file": "docs/client-visual-correction/after/ideation-to-execution-768.png"
+    },
+    {
+      "route": "/brands/inceptura/about",
+      "width": 768,
+      "selector": ".brand-copy-section:nth-of-type(3)",
+      "file": "docs/client-visual-correction/after/problem-statement-768.png"
+    },
+    {
+      "route": "/brands/inceptura/offerings",
+      "width": 768,
+      "selector": ".brand-service-grid",
+      "file": "docs/client-visual-correction/after/inceptura-offerings-768.png"
+    },
+    {
+      "route": "/brands/thinkrunspace",
+      "width": 768,
+      "selector": ".brand-contact-strip",
+      "file": "docs/client-visual-correction/after/find-the-right-service-768.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings",
+      "width": 768,
+      "selector": ".brand-service-grid",
+      "file": "docs/client-visual-correction/after/thinkrunspace-offerings-768.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings/co-working-spaces",
+      "width": 768,
+      "selector": ".brand-detail-main",
+      "file": "docs/client-visual-correction/after/thinkrunspace-service-detail-768.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings/co-working-spaces",
+      "width": 768,
+      "selector": ".brand-site-footer",
+      "file": "docs/client-visual-correction/after/brand-footer-768.png"
+    },
+    {
+      "route": "/",
+      "width": 1366,
+      "selector": "#businesses",
+      "file": "docs/client-visual-correction/after/businesses-1366.png"
+    },
+    {
+      "route": "/",
+      "width": 1366,
+      "selector": ".values-section",
+      "file": "docs/client-visual-correction/after/values-1366.png"
+    },
+    {
+      "route": "/",
+      "width": 1366,
+      "selector": ".announcement",
+      "file": "docs/client-visual-correction/after/ignita-1366.png"
+    },
+    {
+      "route": "/",
+      "width": 1366,
+      "selector": ".media-section",
+      "file": "docs/client-visual-correction/after/media-cards-1366.png"
+    },
+    {
+      "route": "/",
+      "width": 1366,
+      "selector": ".home-services",
+      "file": "docs/client-visual-correction/after/main-services-1366.png"
+    },
+    {
+      "route": "/",
+      "width": 1366,
+      "selector": ".footer",
+      "file": "docs/client-visual-correction/after/main-footer-1366.png"
+    },
+    {
+      "route": "/brands/inceptura/about",
+      "width": 1366,
+      "selector": ".brand-copy-section:nth-of-type(1)",
+      "file": "docs/client-visual-correction/after/ideation-to-execution-1366.png"
+    },
+    {
+      "route": "/brands/inceptura/about",
+      "width": 1366,
+      "selector": ".brand-copy-section:nth-of-type(3)",
+      "file": "docs/client-visual-correction/after/problem-statement-1366.png"
+    },
+    {
+      "route": "/brands/inceptura/offerings",
+      "width": 1366,
+      "selector": ".brand-service-grid",
+      "file": "docs/client-visual-correction/after/inceptura-offerings-1366.png"
+    },
+    {
+      "route": "/brands/thinkrunspace",
+      "width": 1366,
+      "selector": ".brand-contact-strip",
+      "file": "docs/client-visual-correction/after/find-the-right-service-1366.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings",
+      "width": 1366,
+      "selector": ".brand-service-grid",
+      "file": "docs/client-visual-correction/after/thinkrunspace-offerings-1366.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings/co-working-spaces",
+      "width": 1366,
+      "selector": ".brand-detail-main",
+      "file": "docs/client-visual-correction/after/thinkrunspace-service-detail-1366.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings/co-working-spaces",
+      "width": 1366,
+      "selector": ".brand-site-footer",
+      "file": "docs/client-visual-correction/after/brand-footer-1366.png"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "selector": "#businesses",
+      "file": "docs/client-visual-correction/after/businesses-1440.png"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "selector": ".values-section",
+      "file": "docs/client-visual-correction/after/values-1440.png"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "selector": ".announcement",
+      "file": "docs/client-visual-correction/after/ignita-1440.png"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "selector": ".media-section",
+      "file": "docs/client-visual-correction/after/media-cards-1440.png"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "selector": ".home-services",
+      "file": "docs/client-visual-correction/after/main-services-1440.png"
+    },
+    {
+      "route": "/",
+      "width": 1440,
+      "selector": ".footer",
+      "file": "docs/client-visual-correction/after/main-footer-1440.png"
+    },
+    {
+      "route": "/brands/inceptura/about",
+      "width": 1440,
+      "selector": ".brand-copy-section:nth-of-type(1)",
+      "file": "docs/client-visual-correction/after/ideation-to-execution-1440.png"
+    },
+    {
+      "route": "/brands/inceptura/about",
+      "width": 1440,
+      "selector": ".brand-copy-section:nth-of-type(3)",
+      "file": "docs/client-visual-correction/after/problem-statement-1440.png"
+    },
+    {
+      "route": "/brands/inceptura/offerings",
+      "width": 1440,
+      "selector": ".brand-service-grid",
+      "file": "docs/client-visual-correction/after/inceptura-offerings-1440.png"
+    },
+    {
+      "route": "/brands/thinkrunspace",
+      "width": 1440,
+      "selector": ".brand-contact-strip",
+      "file": "docs/client-visual-correction/after/find-the-right-service-1440.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings",
+      "width": 1440,
+      "selector": ".brand-service-grid",
+      "file": "docs/client-visual-correction/after/thinkrunspace-offerings-1440.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings/co-working-spaces",
+      "width": 1440,
+      "selector": ".brand-detail-main",
+      "file": "docs/client-visual-correction/after/thinkrunspace-service-detail-1440.png"
+    },
+    {
+      "route": "/brands/thinkrunspace/offerings/co-working-spaces",
+      "width": 1440,
+      "selector": ".brand-site-footer",
+      "file": "docs/client-visual-correction/after/brand-footer-1440.png"
+    }
+  ],
+  "routeStatus": {
+    "/": 200,
+    "/about": 200,
+    "/announcements": 200,
+    "/brands/elevatrain": 200,
+    "/brands/elevatrain/about": 200,
+    "/brands/elevatrain/contact": 200,
+    "/brands/elevatrain/trainings": 200,
+    "/brands/elevatrain/trainings/communication-and-soft-skills": 200,
+    "/brands/elevatrain/trainings/dev-ops-and-agile": 200,
+    "/brands/elevatrain/trainings/mindfulness": 200,
+    "/brands/elevatrain/trainings/project-and-program-management": 200,
+    "/brands/elevatrain/trainings/six-sigma-and-process-excellence": 200,
+    "/brands/elevatrain/trainings/tech-and-digital-skills": 200,
+    "/brands/employaa": 200,
+    "/brands/employaa/about": 200,
+    "/brands/employaa/contact": 200,
+    "/brands/employaa/our-global-reach": 200,
+    "/brands/employaa/services": 200,
+    "/brands/employaa/services/bulk-hiring": 200,
+    "/brands/employaa/services/campus-hiring": 200,
+    "/brands/employaa/services/contract-hiring": 200,
+    "/brands/employaa/services/gig-industry-specific": 200,
+    "/brands/employaa/services/it-tech-staffing": 200,
+    "/brands/employaa/services/permanent-hiring": 200,
+    "/brands/employaa/services/rpo": 200,
+    "/brands/go-travel-global": 200,
+    "/brands/go-travel-global/about": 200,
+    "/brands/go-travel-global/contact": 200,
+    "/brands/go-travel-global/services": 200,
+    "/brands/go-travel-global/services/corporate-and-business-travel": 200,
+    "/brands/go-travel-global/services/customized-travel-planning": 200,
+    "/brands/go-travel-global/services/domestic-and-intl-tours": 200,
+    "/brands/go-travel-global/services/visa-assistance-and-documentation": 200,
+    "/brands/inceptura": 200,
+    "/brands/inceptura/about": 200,
+    "/brands/inceptura/contact": 200,
+    "/brands/inceptura/offerings": 200,
+    "/brands/inceptura/offerings/business-strategy-and-growth-planning": 200,
+    "/brands/inceptura/offerings/company-registration-and-compliance": 200,
+    "/brands/inceptura/offerings/event-management": 200,
+    "/brands/inceptura/offerings/international-expansions": 200,
+    "/brands/inceptura/offerings/revenue-checks-and-performance-monitoring": 200,
+    "/brands/inceptura/offerings/talent-acquisition": 200,
+    "/brands/inceptura/offerings/travel-and-logistics": 200,
+    "/brands/inceptura/our-global-reach": 200,
+    "/brands/leaders-pinnacle": 200,
+    "/brands/leaders-pinnacle/about": 200,
+    "/brands/leaders-pinnacle/contact": 200,
+    "/brands/leaders-pinnacle/our-global-reach": 200,
+    "/brands/leaders-pinnacle/services": 200,
+    "/brands/leaders-pinnacle/services/bespoke-corporate-events": 200,
+    "/brands/leaders-pinnacle/services/podcast-and-content-series": 200,
+    "/brands/leaders-pinnacle/services/strategic-conferences": 200,
+    "/brands/leaders-pinnacle/services/trade-expos-and-exhibitions": 200,
+    "/brands/leaders-pinnacle/services/webinars-and-virtual-events": 200,
+    "/brands/remunerax": 200,
+    "/brands/remunerax/about": 200,
+    "/brands/remunerax/contact": 200,
+    "/brands/remunerax/services": 200,
+    "/brands/remunerax/services/employee-self-service-portal": 200,
+    "/brands/remunerax/services/full-and-final-settlement": 200,
+    "/brands/remunerax/services/payroll-processing": 200,
+    "/brands/remunerax/services/statutory-compliances": 200,
+    "/brands/remunerax/services/support-for-contractual": 200,
+    "/brands/remunerax/services/tax-management": 200,
+    "/brands/thinkrunspace": 200,
+    "/brands/thinkrunspace/about": 200,
+    "/brands/thinkrunspace/contact": 200,
+    "/brands/thinkrunspace/offerings": 200,
+    "/brands/thinkrunspace/offerings/co-working-spaces": 200,
+    "/brands/thinkrunspace/offerings/meeting-rooms-and-business-infra": 200,
+    "/brands/thinkrunspace/offerings/serviced-and-managed-offices": 200,
+    "/brands/thinkrunspace/offerings/virtual-office-solutions": 200,
+    "/brands/thinkrunspace/our-global-reach": 200,
+    "/businesses": 200,
+    "/businesses/elevatrain": 200,
+    "/businesses/employaa": 200,
+    "/businesses/go-travel-global": 200,
+    "/businesses/inceptura": 200,
+    "/businesses/leaders-pinnacle": 200,
+    "/businesses/remunerax": 200,
+    "/businesses/thinkrunspace": 200,
+    "/careers": 200,
+    "/contact": 200,
+    "/global-presence": 200,
+    "/icon.svg": 200,
+    "/news-media": 200,
+    "/services": 200,
+    "/services/content-animation": 200,
+    "/services/seo-marketing": 200,
+    "/services/website-designing": 200
+  },
+  "overflow": [],
+  "missingImages": [],
+  "navigation": {
+    "mainMobileMenuOpen": true,
+    "brandMobileMenuOpen": true
+  }
+}

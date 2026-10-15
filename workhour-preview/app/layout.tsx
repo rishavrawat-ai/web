@@ -2,9 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Workhour Business — Together We Thrive',
-  description: 'Workhour Business design preview.',
-  robots: { index: false, follow: false },
+  title: { default: 'Workhour Business — Together We Thrive', template: '%s | Workhour Business' },
+  description: 'Business services across planning, people, payroll, travel, learning, workspaces, events, and digital marketing.',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
