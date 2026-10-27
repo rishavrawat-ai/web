@@ -16,3 +16,7 @@
 - `public/feature-ignita.webp`, `feature-mindfulness.webp`, and `feature-business-events.webp` — newly AI-generated, text-free editorial illustrations for the announcement and media cards. They are abstract compositions, not depictions of a named venue, organization, or completed event.
 
 The newly generated PNG masters were resized to 1600 × 900 and optimized as WebP. No stock imagery is used. All generated scenes are illustrative; they do not depict actual Workhour employees, offices, clients, or completed services and events.
+
+
+## Additional integration notes
+- public/ignitia-auditorium.webp: AI-generated illustrative conference auditorium for the IGNITIA detail page; not an actual event. Prompt and optimization details: docs/ignitia-redesign/image-source.json.

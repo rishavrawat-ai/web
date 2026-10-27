@@ -1,0 +1,84 @@
+.header {
+  position: relative;
+  z-index: 100;
+  display: flex;
+  min-height: 86px;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 2vw, 30px);
+  padding: 12px clamp(24px, 6vw, 104px);
+  border-bottom: 1px solid #edf1f0;
+  background: #fff;
+}
+
+.brand { flex: 0 0 auto; line-height: 0; }
+.brand img { display: block; width: clamp(190px, 16vw, 220px); height: auto; object-fit: contain; }
+.nav { display: flex; align-items: center; gap: clamp(10px, 1.4vw, 22px); min-width: 0; font-size: 13px; }
+.navLink, .contactButton, .nestedSummary { color: #12263b; text-decoration: none; }
+.navLink { display: inline-flex; align-items: center; gap: 5px; padding: 12px 0; white-space: nowrap; }
+.navLink span, .nestedSummary span { color: #168c84; }
+.navDropdown { position: relative; flex: 0 0 auto; }
+.navDropdown > summary, .nestedSummary { cursor: pointer; list-style: none; }
+.navDropdown > summary::-webkit-details-marker, .nestedSummary::-webkit-details-marker { display: none; }
+.navDropdown > summary::marker, .nestedSummary::marker { content: ''; }
+.navDropdown > summary:focus-visible, .nestedSummary:focus-visible { outline: 3px solid #168c84; outline-offset: 4px; }
+.dropdown, .nestedMenu {
+  position: absolute;
+  z-index: 110;
+  top: calc(100% - 1px);
+  left: -14px;
+  display: none;
+  width: max-content;
+  min-width: 220px;
+  max-width: min(360px, calc(100vw - 28px));
+  max-height: min(72vh, 560px);
+  overflow: visible;
+  padding: 9px;
+  border: 1px solid #dbe5e8;
+  background: #fff;
+  box-shadow: 0 18px 40px #071a3126;
+}
+.navDropdown[open] > .dropdown, .navDropdown[data-hovered='true'] > .dropdown, .navDropdown:focus-within > .dropdown,
+.nestedDropdown[open] > .nestedMenu, .nestedDropdown[data-hovered='true'] > .nestedMenu, .nestedDropdown:focus-within > .nestedMenu { display: grid; }
+.dropdown > a, .nestedMenu > a { min-height: 42px; display: flex; align-items: center; padding: 10px 12px; color: #263e4d; font-size: 14px; line-height: 1.35; white-space: normal; }
+.dropdown > a:hover, .nestedMenu > a:hover, .nestedSummary:hover { background: #eaf5f1; color: #071a31; }
+.aboutDropdown { width: 350px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.businessDropdown { width: 290px; }
+.nestedDropdown { position: relative; }
+.nestedSummary { display: flex; align-items: center; justify-content: space-between; min-height: 42px; padding: 10px 12px; color: #263e4d; font-size: 14px; }
+.nestedSummary span { font-size: 22px; line-height: .8; }
+.nestedMenu { top: -1px; left: calc(100% - 1px); min-width: 265px; max-height: min(72vh, 560px); overflow: auto; }
+.contactButton { flex: 0 0 auto; padding: 13px 16px; background: #168c84; color: #fff; font-size: 12px; white-space: nowrap; }
+.contactButton:hover { background: #08766e; }
+.menuToggle { display: none; min-height: 42px; padding: 9px 14px; border: 1px solid #dbe5e8; background: #fff; color: #071a31; }
+.menuToggle:focus-visible, .contactButton:focus-visible, .dropdown a:focus-visible, .nestedMenu a:focus-visible { outline: 3px solid #168c84; outline-offset: 2px; }
+.header :global(.search-button) { min-height: 42px; padding: 10px 0; border: 0; background: transparent; color: #12263b; font-size: 13px; white-space: nowrap; }
+.header :global(.search-button:hover) { color: #087d77; }
+.header :global(.search-panel) { position: absolute; z-index: 120; top: calc(100% - 1px); right: clamp(24px, 6vw, 104px); width: min(440px, calc(100vw - 32px)); max-height: 70vh; overflow: auto; padding: 22px; border: 1px solid #dbe5e8; background: #fff; box-shadow: 0 18px 40px #071a3126; }
+
+@media (max-width: 1120px) {
+  .header { min-height: 76px; flex-wrap: wrap; padding: 10px 24px; }
+  .brand img { width: clamp(185px, 30vw, 210px); }
+  .menuToggle { display: block; margin-left: auto; }
+  .nav { display: none; flex: 1 0 100%; align-items: stretch; flex-direction: column; gap: 0; max-height: min(72vh, 660px); overflow: auto; padding: 8px 0 4px; }
+  .navOpen { display: flex; }
+  .nav > a, .nav > .navDropdown, .nav :global(.search-button) { width: 100%; border-top: 1px solid #edf1f0; }
+  .navLink { display: flex; min-height: 45px; width: 100%; justify-content: space-between; padding: 11px 2px; }
+  .navDropdown > summary { border: 0; }
+  .dropdown, .nestedMenu { position: static; width: 100%; min-width: 0; max-width: none; max-height: none; overflow: visible; padding: 4px 0 8px 12px; border: 0; border-top: 1px solid #e6eeeb; background: #fff; box-shadow: none; }
+  .aboutDropdown { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dropdown > a, .nestedMenu > a { min-height: 42px; }
+  .nestedDropdown { border-top: 1px solid #edf1f0; }
+  .nestedSummary { min-height: 44px; padding: 10px 12px; }
+  .nestedMenu { padding-left: 14px; }
+  .nav :global(.search-button) { min-height: 45px; text-align: left; }
+  .header :global(.search-panel) { position: static; width: 100%; max-width: none; max-height: 48vh; margin: 6px 0 12px; box-shadow: none; }
+  .contactButton { width: 100%; margin-top: 10px; text-align: center; }
+}
+
+@media (max-width: 520px) {
+  .header { padding-inline: 19px; }
+  .brand img { width: 180px; }
+  .aboutDropdown { grid-template-columns: 1fr; }
+  .dropdown > a, .nestedMenu > a { padding-inline: 10px; }
+}

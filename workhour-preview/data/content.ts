@@ -76,7 +76,7 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: 'content-animation', title: 'Content Animation',
+    slug: 'content-animation', title: 'Content Animation Studio',
     intro: 'We create 2D, 3D, and motion-graphic content to make complex subjects easier to follow and visually engaging.',
     description: 'Detailed processes, policies, and learning materials can be difficult to absorb in a text-only format. A carefully planned visual story can give an audience another way to understand the key ideas.',
     sections: [

@@ -37,3 +37,10 @@ Each brand includes Home, About, its exact menu index label, Contact, and every 
 - [x] Breadcrumbs, service index links, brand cross-navigation, contact guidance, and footer destinations stay on known routes.
 - [x] Generated/editorial and business images have descriptive alt text, responsive sizes, and cover crops.
 - [x] No disabled contact/newsletter shell, review banner, or public implementation note remains.
+
+
+## Additional integration notes
+
+- [x] `/about` — nine sections in the requested order, with matching About navigation anchors and coordinated Vision/Mission cards.
+- [x] `/contact` — validated required enquiry fields, honest submission-unavailable state, business and service navigation.
+- [x] `/global-presence` — Natural Earth country map and accessible provisional country list from one data source.

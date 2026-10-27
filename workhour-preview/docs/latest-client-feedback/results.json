@@ -1,0 +1,454 @@
+{
+  "widths": [
+    390,
+    768,
+    1366,
+    1440
+  ],
+  "routes": {
+    "/": {
+      "status": 200,
+      "hasMainHeader": true,
+      "imageCount": 10,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "/about": {
+      "status": 200,
+      "hasMainHeader": true,
+      "imageCount": 2,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "/businesses": {
+      "status": 200,
+      "hasMainHeader": true,
+      "imageCount": 9,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "/businesses/inceptura": {
+      "status": 200,
+      "hasMainHeader": true,
+      "imageCount": 3,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "/services": {
+      "status": 200,
+      "hasMainHeader": true,
+      "imageCount": 5,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "/services/website-designing": {
+      "status": 200,
+      "hasMainHeader": true,
+      "imageCount": 3,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "/contact": {
+      "status": 200,
+      "hasMainHeader": true,
+      "imageCount": 2,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "/global-presence": {
+      "status": 200,
+      "hasMainHeader": true,
+      "imageCount": 2,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "/announcements": {
+      "status": 200,
+      "hasMainHeader": true,
+      "imageCount": 3,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "/news-media": {
+      "status": 200,
+      "hasMainHeader": true,
+      "imageCount": 5,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "/brands/inceptura": {
+      "status": 200,
+      "hasMainHeader": false,
+      "imageCount": 1,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "/brands/elevatrain/trainings": {
+      "status": 200,
+      "hasMainHeader": false,
+      "imageCount": 1,
+      "brokenImages": [],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    }
+  },
+  "screenshots": [
+    "about-full-390.png",
+    "about-vision-mission-390.png",
+    "about-presence-390.png",
+    "world-map-390.png",
+    "contact-form-390.png",
+    "contact-validation-390.png",
+    "contact-unavailable-390.png",
+    "business-services-dropdown-390.png",
+    "brand-trainings-menu-390.png",
+    "about-full-768.png",
+    "about-vision-mission-768.png",
+    "about-presence-768.png",
+    "world-map-768.png",
+    "contact-form-768.png",
+    "contact-validation-768.png",
+    "contact-unavailable-768.png",
+    "business-services-dropdown-768.png",
+    "brand-trainings-menu-768.png",
+    "about-full-1366.png",
+    "about-vision-mission-1366.png",
+    "about-presence-1366.png",
+    "world-map-1366.png",
+    "contact-form-1366.png",
+    "contact-validation-1366.png",
+    "contact-unavailable-1366.png",
+    "business-services-dropdown-1366.png",
+    "brand-trainings-menu-1366.png",
+    "about-full-1440.png",
+    "about-vision-mission-1440.png",
+    "about-presence-1440.png",
+    "world-map-1440.png",
+    "contact-form-1440.png",
+    "contact-validation-1440.png",
+    "contact-unavailable-1440.png",
+    "business-services-dropdown-1440.png",
+    "brand-trainings-menu-1440.png"
+  ],
+  "checks": {
+    "about-390": {
+      "sectionIds": [
+        "history",
+        "vision-mission",
+        "core-values",
+        "impact",
+        "csr",
+        "global-expansion",
+        "workhour-in-house",
+        "growing-smbs",
+        "presence"
+      ],
+      "navTitles": [
+        "Our History",
+        "Our Vision & Mission",
+        "Core Values",
+        "Our Impact",
+        "CSR",
+        "Global Expansion",
+        "The Workhour Business in House",
+        "Built for growing SMBs",
+        "Our Presence"
+      ],
+      "logo": {
+        "width": 180,
+        "height": 43.8125,
+        "naturalWidth": 534,
+        "naturalHeight": 130
+      },
+      "overflow": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      }
+    },
+    "map-390": {
+      "viewport": 390,
+      "document": 390,
+      "body": 390
+    },
+    "contact-390": {
+      "requiredFields": [
+        {
+          "name": "email",
+          "required": true,
+          "type": "email"
+        },
+        {
+          "name": "company",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "name": "message",
+          "required": true,
+          "type": null
+        }
+      ],
+      "overflow": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      }
+    },
+    "about-768": {
+      "sectionIds": [
+        "history",
+        "vision-mission",
+        "core-values",
+        "impact",
+        "csr",
+        "global-expansion",
+        "workhour-in-house",
+        "growing-smbs",
+        "presence"
+      ],
+      "navTitles": [
+        "Our History",
+        "Our Vision & Mission",
+        "Core Values",
+        "Our Impact",
+        "CSR",
+        "Global Expansion",
+        "The Workhour Business in House",
+        "Built for growing SMBs",
+        "Our Presence"
+      ],
+      "logo": {
+        "width": 210,
+        "height": 51.109375,
+        "naturalWidth": 534,
+        "naturalHeight": 130
+      },
+      "overflow": {
+        "viewport": 768,
+        "document": 768,
+        "body": 768
+      }
+    },
+    "map-768": {
+      "viewport": 768,
+      "document": 768,
+      "body": 768
+    },
+    "contact-768": {
+      "requiredFields": [
+        {
+          "name": "email",
+          "required": true,
+          "type": "email"
+        },
+        {
+          "name": "company",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "name": "message",
+          "required": true,
+          "type": null
+        }
+      ],
+      "overflow": {
+        "viewport": 768,
+        "document": 768,
+        "body": 768
+      }
+    },
+    "about-1366": {
+      "sectionIds": [
+        "history",
+        "vision-mission",
+        "core-values",
+        "impact",
+        "csr",
+        "global-expansion",
+        "workhour-in-house",
+        "growing-smbs",
+        "presence"
+      ],
+      "navTitles": [
+        "Our History",
+        "Our Vision & Mission",
+        "Core Values",
+        "Our Impact",
+        "CSR",
+        "Global Expansion",
+        "The Workhour Business in House",
+        "Built for growing SMBs",
+        "Our Presence"
+      ],
+      "logo": {
+        "width": 218.546875,
+        "height": 53.203125,
+        "naturalWidth": 534,
+        "naturalHeight": 130
+      },
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "map-1366": {
+      "viewport": 1366,
+      "document": 1366,
+      "body": 1366
+    },
+    "contact-1366": {
+      "requiredFields": [
+        {
+          "name": "email",
+          "required": true,
+          "type": "email"
+        },
+        {
+          "name": "company",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "name": "message",
+          "required": true,
+          "type": null
+        }
+      ],
+      "overflow": {
+        "viewport": 1366,
+        "document": 1366,
+        "body": 1366
+      }
+    },
+    "dropdownDismissal": {
+      "escapeClosesNestedThenParent": true,
+      "outsideClickCloses": true
+    },
+    "about-1440": {
+      "sectionIds": [
+        "history",
+        "vision-mission",
+        "core-values",
+        "impact",
+        "csr",
+        "global-expansion",
+        "workhour-in-house",
+        "growing-smbs",
+        "presence"
+      ],
+      "navTitles": [
+        "Our History",
+        "Our Vision & Mission",
+        "Core Values",
+        "Our Impact",
+        "CSR",
+        "Global Expansion",
+        "The Workhour Business in House",
+        "Built for growing SMBs",
+        "Our Presence"
+      ],
+      "logo": {
+        "width": 220,
+        "height": 53.546875,
+        "naturalWidth": 534,
+        "naturalHeight": 130
+      },
+      "overflow": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      }
+    },
+    "map-1440": {
+      "viewport": 1440,
+      "document": 1440,
+      "body": 1440
+    },
+    "contact-1440": {
+      "requiredFields": [
+        {
+          "name": "email",
+          "required": true,
+          "type": "email"
+        },
+        {
+          "name": "company",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "name": "message",
+          "required": true,
+          "type": null
+        }
+      ],
+      "overflow": {
+        "viewport": 1440,
+        "document": 1440,
+        "body": 1440
+      }
+    },
+    "aboutCertificationText": {
+      "certificationMentions": 0,
+      "topLevelAboutSections": 9
+    },
+    "brandNavigation": {
+      "menuLabels": [
+        "Trainings"
+      ],
+      "logoUsesSuppliedMark": "ET\nElevatrain",
+      "menuItems": 7
+    }
+  },
+  "errors": []
+}

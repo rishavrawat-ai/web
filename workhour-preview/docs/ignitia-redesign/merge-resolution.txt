@@ -1,0 +1,9 @@
+Resolved the eleven Git conflicts encountered during IGNITIA implementation.
+
+Preserved the existing four standalone About pages, their navigation/search URLs, homepage composition, business ordering, and IGNITIA feature/link/content.
+Retained incoming footer styles, contact enquiry form, qualified global-presence map and the Content Animation Studio service name.
+Retained the previously tested shared header after the incoming dropdown implementation failed browser navigation checks.
+Combined content/asset/verification notes and retained incoming supporting modules.
+
+Conflict resolutions are staged. No merge commit or push was performed.
+The contact form remains explicitly unconnected; the merge did not introduce an endpoint or actual message delivery.

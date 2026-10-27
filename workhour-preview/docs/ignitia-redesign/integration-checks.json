@@ -1,0 +1,98 @@
+[
+  {
+    "width": 1440,
+    "route": "/",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/about/our-story",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/about/our-impact",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/about/responsible-business",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/about/presence",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/contact",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/global-presence",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/announcements",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/about/our-story",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/about/our-impact",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/about/responsible-business",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/about/presence",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/contact",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/global-presence",
+    "status": 200,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "route": "/announcements",
+    "status": 200,
+    "overflow": false
+  }
+]

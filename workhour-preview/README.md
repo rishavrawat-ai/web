@@ -27,10 +27,14 @@ The existing Vercel project is `workhour-preview`, linked to `rishavrawat-ai/web
 
 ## Content and factual boundaries
 
-- Contact pages provide service and business navigation because no public contact destination was supplied. They do not simulate enquiry or newsletter submissions.
+- The main Contact page includes the client's three required enquiry fields and local validation. No approved submission endpoint or recipient exists, so it does not send or store a message. The optional enquiry category stays hidden until the client supplies its options.
 - Market groupings are qualified planning context, not confirmation of offices or local service availability.
 - Employee Self Service Portal is described as a service concept; no employee portal or login is implemented.
 - Announcement and media pages use only supplied titles and do not invent publication details, awards, credentials, or completed events.
 - Generated scenes are illustrative and do not depict actual Workhour staff, offices, clients, or completed events.
 
 Internal route, asset, copy-proposal, and factual-gap notes are in `docs/`.
+
+## About and IGNITIA pages
+
+About has four standalone routes: `/about/our-story`, `/about/our-impact`, `/about/responsible-business`, and `/about/presence`. IGNITIA is at `/announcements/ignitia`. These pages retain their generated illustrative assets and responsive layouts.

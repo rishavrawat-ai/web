@@ -1,0 +1,49 @@
+.aboutPage { min-width: 0; }
+.jumps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+  margin: 46px 0 66px;
+  padding: 0;
+}
+.jumps a {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid #dbe5e8;
+  background: #fff;
+  color: #314953;
+  font-size: 13px;
+  line-height: 1.3;
+  transition: border-color .15s, background .15s, color .15s;
+}
+.jumps a:hover { border-color: #2baaa3; background: #eff7f4; color: #071a31; }
+.jumps a:focus-visible { outline: 3px solid #168c84; outline-offset: 2px; }
+.section { scroll-margin-top: 102px; padding: 48px 0 54px; }
+.section > h2 { max-width: 800px; font-size: clamp(36px, 4.8vw, 58px); line-height: 1; }
+.section > p:not(.eyebrow) { max-width: 760px; font-size: 16px; line-height: 1.75; }
+.pairGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+.pairGrid article { min-width: 0; padding: clamp(22px, 3vw, 34px); border: 1px solid #dbe5e8; background: #f5f9f7; }
+.pairGrid article > .eyebrow { margin-bottom: 12px; color: #168c84; }
+.pairGrid article > p:last-child { margin: 0; color: #536970; font-size: 16px; line-height: 1.72; }
+.valuesGrid, .capabilitiesGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 26px; }
+.valuesGrid article, .capabilitiesGrid article { min-width: 0; padding: 22px; border: 1px solid #dbe5e8; background: #f6f9f8; }
+.valuesGrid h3, .capabilitiesGrid h3 { margin: 0 0 10px; color: #071a31; font: 400 clamp(22px, 2.5vw, 28px)/1.12 Georgia, 'Times New Roman', serif; }
+.valuesGrid p, .capabilitiesGrid p { margin: 0; color: #586e75; font-size: 14px; line-height: 1.65; }
+.capabilitiesGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.capabilitiesGrid article { border-left: 3px solid #2baaa3; }
+.qualification { max-width: 730px; margin: 22px 0 0; color: #61767b; font-size: 13px; line-height: 1.6; }
+
+@media (max-width: 900px) {
+  .jumps { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 38px 0 54px; }
+  .valuesGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .jumps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; margin: 30px 0 42px; }
+  .jumps a { min-height: 46px; padding: 9px 10px; font-size: 12px; }
+  .section { scroll-margin-top: 86px; padding: 36px 0 42px; }
+  .section > h2 { font-size: clamp(34px, 9vw, 43px); }
+  .pairGrid, .valuesGrid, .capabilitiesGrid { grid-template-columns: 1fr; gap: 10px; margin-top: 20px; }
+  .pairGrid article, .valuesGrid article, .capabilitiesGrid article { padding: 20px; }
+}

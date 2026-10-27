@@ -1,11 +1,16 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { businesses, globalPresence, media, services } from '../data/content'
+import { businesses, globalExpansion, media, services } from '../data/content'
+import { aboutSections } from '../data/about-sections'
 import { brandHref, brandSites } from '../data/brand-sites'
 import { homepageBusinessIntros } from '../data/business-content'
 import MainHeader from './MainHeader'
 import MainFooter from './MainFooter'
+import PresenceMap from './PresenceMap'
 import IgnitiaFeature from './IgnitiaFeature'
+import ContactEnquiryForm from './ContactEnquiryForm'
+import aboutStyles from './AboutPage.module.css'
+import contactStyles from './ContactPage.module.css'
 
 type PageKind = 'about' | 'announcements' | 'businesses' | 'careers' | 'contact' | 'news-media' | 'global-presence'
 
@@ -20,13 +25,22 @@ const pageCopy: Record<PageKind, { title: string; intro: string }> = {
 }
 
 function AboutPage() {
-  const sections = [
-    { id: 'history', title: 'Our story', paragraphs: ['Workhour Business brings together seven specialist businesses: Inceptura, Employaa, Remunerax, Go Travel Global, Elevatrain, ThinkRunSpace, and Leaders Pinnacle.', 'Together, their service areas span business planning, recruitment, payroll administration, travel, corporate learning, flexible workspaces, and professional events.'] },
-    { id: 'impact', title: 'Our impact', paragraphs: ['Our aim is to make complex business needs easier to navigate by connecting organizations with focused expertise across the business journey.', 'Each brand concentrates on a distinct area of work, so organizations can explore the support relevant to their current priorities.'] },
-    { id: 'csr', title: 'Responsible business', paragraphs: ['Responsible work begins with clear expectations, thoughtful planning, and respect for the people affected by business decisions.', 'We approach each service with attention to its context and encourage clients to define the outcomes, responsibilities, and safeguards that matter to them.'] },
-    { id: 'presence', title: 'Presence', paragraphs: ['The supplied planning material names markets across Asia, Oceania, the Middle East, Africa, and North America. These are planning references, not a directory of confirmed offices or service locations.'] },
-  ]
-  return <><nav className="about-jumps" aria-label="About Workhour sections">{sections.map(section => <a href={`#${section.id}`} key={section.id}>{section.title}</a>)}</nav>{sections.map(section => <section className="about-content" id={section.id} key={section.id}><p className="eyebrow teal">Workhour Business</p><h2>{section.title}</h2>{section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}{section.id === 'presence' && <Link className="text-link" href="/global-presence">View market context <span aria-hidden="true">↗</span></Link>}</section>)}</>
+  return <div className={aboutStyles.aboutPage}>
+    <nav className={`about-jumps ${aboutStyles.jumps}`} aria-label="About Workhour sections">{aboutSections.map(({ id, title }) => <a href={`#${id}`} key={id}>{title}</a>)}</nav>
+    {aboutSections.map(({ id, title }) => <section className={`about-content ${aboutStyles.section}`} id={id} key={id}>
+      <p className="eyebrow teal">Workhour Business</p>
+      <h2>{title}</h2>
+      {id === 'history' && <><p>Workhour Business brings together seven specialist businesses: Inceptura, Employaa, Remunerax, Go Travel Global, Elevatrain, ThinkRunSpace, and Leaders Pinnacle.</p><p>Together, their service areas span business planning, recruitment, payroll administration, travel, corporate learning, flexible workspaces, and professional events.</p></>}
+      {id === 'vision-mission' && <div className={aboutStyles.pairGrid}><article><p className="eyebrow">Our Vision</p><p>{globalExpansion.vision}</p></article><article><p className="eyebrow">Our Mission</p><p>{globalExpansion.mission}</p></article></div>}
+      {id === 'core-values' && <div className={aboutStyles.valuesGrid}>{globalExpansion.values.map((value) => <article key={value.title}><h3>{value.title}</h3><p>{value.text}</p></article>)}</div>}
+      {id === 'impact' && <><p>Our aim is to make complex business needs easier to navigate by connecting organizations with focused expertise across the business journey.</p><p>Each brand concentrates on a distinct area of work, so organizations can explore the support relevant to their current priorities.</p></>}
+      {id === 'csr' && <><p>Responsible work begins with clear expectations, thoughtful planning, and respect for the people affected by business decisions.</p><p>We approach each service with attention to its context and encourage clients to define the outcomes, responsibilities, and safeguards that matter to them.</p></>}
+      {id === 'global-expansion' && <><p>{globalExpansion.intro}</p><p>Workhour Business describes support across multicultural business setup, regulatory compliance, local hiring, and strategic consulting. The supplied country references are planning context; they do not confirm client centers, offices, or service coverage.</p></>}
+      {id === 'workhour-in-house' && <><p>The in-house offering is described as an operational foundation for organizations considering expansion, covering compliance, recruitment, workspace and technology infrastructure, HR and payroll, and go-to-market planning.</p><div className={aboutStyles.capabilitiesGrid}>{globalExpansion.capabilities.map((capability) => <article key={capability.title}><h3>{capability.title}</h3><p>{capability.text}</p></article>)}</div><p className={aboutStyles.qualification}>The country planning list does not confirm that Workhour Business has an office or operating center in each market.</p></>}
+      {id === 'growing-smbs' && <p>{globalExpansion.audience}</p>}
+      {id === 'presence' && <><p>The supplied planning material names countries across Asia, Oceania, the Middle East, Africa, and North America. Every highlighted country below is provisional and is not a confirmed office or service territory.</p><PresenceMap variant="compact" /><Link className="text-link" href="/global-presence">View the global map <span aria-hidden="true">↗</span></Link></>}
+    </section>)}
+  </div>
 }
 
 function PageIntro({ kind }: { kind: PageKind }) {
@@ -44,7 +58,7 @@ function CareersPage() {
 }
 
 function ContactPage() {
-  return <><section className="contact-guidance"><p className="eyebrow teal">Explore the group</p><h2>Choose the area that fits your need.</h2><p>Review each business and its services to find the right starting point.</p><div className="contact-service-links">{brandSites.map(brand => <Link key={brand.slug} href={brandHref(brand)}><strong>{brand.name}</strong><span>{brand.strapline}</span><span aria-hidden="true">↗</span></Link>)}</div></section><section className="contact-guidance"><p className="eyebrow teal">Workhour Business services</p><h2>Start with a service area.</h2><div className="service-switcher">{services.map(service => <Link key={service.slug} href={`/services/${service.slug}`}>{service.title} <span aria-hidden="true">↗</span></Link>)}</div></section></>
+  return <><section className={contactStyles.formSection} aria-labelledby="contact-form-heading"><p className="eyebrow teal">Contact Workhour Business</p><h2 id="contact-form-heading">Tell us what you need.</h2><p>Share your contact details and a message. Submission is not connected yet, so no message will be sent.</p><ContactEnquiryForm /></section><section className="contact-guidance"><p className="eyebrow teal">Explore the group</p><h2>Choose the area that fits your need.</h2><p>Review each business and its services to find the right starting point.</p><div className="contact-service-links">{brandSites.map(brand => <Link key={brand.slug} href={brandHref(brand)}><strong>{brand.name}</strong><span>{brand.strapline}</span><span aria-hidden="true">↗</span></Link>)}</div></section><section className="contact-guidance"><p className="eyebrow teal">Workhour Business services</p><h2>Start with a service area.</h2><div className="service-switcher">{services.map(service => <Link key={service.slug} href={`/services/${service.slug}`}>{service.title} <span aria-hidden="true">↗</span></Link>)}</div></section></>
 }
 
 function AnnouncementPage() {
@@ -56,11 +70,11 @@ function NewsMediaPage() {
 }
 
 function GlobalPresencePage() {
-  return <section className="global-presence-content"><p className="eyebrow teal">Markets named in planning material</p><h2>Global presence</h2><p>These country groupings reflect the supplied planning list. They do not confirm an office, city location, or active service availability.</p><div className="presence-grid">{globalPresence.map(({ region, countries }) => <section className="presence-card" key={region}><p className="eyebrow teal">Market group</p><h3>{region}</h3><ul className="presence-countries">{countries.map(country => <li key={country}>{country}</li>)}</ul></section>)}</div></section>
+  return <section className="global-presence-content"><p className="eyebrow teal">Markets named in planning material</p><h2>Global presence</h2><p>These country groupings reflect supplied planning material. They do not confirm an office, city location, or active service availability.</p><PresenceMap /></section>
 }
 
 export default function ReviewPage({ kind }: { kind: PageKind }) {
-  return <><MainHeader /><main className="review-page"><div className="review-inner"><PageIntro kind={kind} />{kind === 'about' && <AboutPage />}{kind === 'businesses' && <BusinessesPage />}{kind === 'careers' && <CareersPage />}{kind === 'contact' && <ContactPage />}{kind === 'announcements' && <AnnouncementPage />}{kind === 'news-media' && <NewsMediaPage />}{kind !== 'contact' && <section className="page-next-step"><h2>Explore the Workhour Business group.</h2><Link className="button button-dark" href="/businesses">Explore businesses <span aria-hidden="true">↗</span></Link></section>}</div></main><MainFooter /></>
+  return <><MainHeader /><main className="review-page"><div className="review-inner"><PageIntro kind={kind} />{kind === 'about' && <AboutPage />}{kind === 'businesses' && <BusinessesPage />}{kind === 'careers' && <CareersPage />}{kind === 'contact' && <ContactPage />}{kind === 'announcements' && <AnnouncementPage />}{kind === 'news-media' && <NewsMediaPage />}{kind !== 'contact' && kind !== 'about' && <section className="page-next-step"><h2>Explore the Workhour Business group.</h2><Link className="button button-dark" href="/businesses">Explore businesses <span aria-hidden="true">↗</span></Link></section>}</div></main><MainFooter /></>
 }
 
 export function MainGlobalPresence() {
