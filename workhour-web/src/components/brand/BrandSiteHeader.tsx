@@ -10,16 +10,11 @@ type Props = {
   name: string
   logo?: { url: string; alt: string; width?: number | null; height?: number | null } | null
   services: BrandNavService[]
+  serviceMenuLabel: string
+  showGlobalReach: boolean
 }
 
-const mainLinks = [
-  { title: 'Home', href: '/' },
-  { title: 'About', href: '/about' },
-  { title: 'Contact', href: '/contact' },
-  { title: 'Our Global Reach', href: '/global-reach' },
-]
-
-export function BrandSiteHeader({ name, logo, services }: Props) {
+export function BrandSiteHeader({ name, logo, services, serviceMenuLabel, showGlobalReach }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
   const closeMenu = () => setMenuOpen(false)
 
@@ -29,15 +24,17 @@ export function BrandSiteHeader({ name, logo, services }: Props) {
     </Link>
     <button className="brand-menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="brand-site-navigation" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? 'Close' : 'Menu'}</button>
     <nav id="brand-site-navigation" className={menuOpen ? 'brand-site-nav is-open' : 'brand-site-nav'} aria-label={`${name} navigation`}>
-      {mainLinks.slice(0, 2).map((item) => <Link href={item.href} key={item.href} onClick={closeMenu}>{item.title}</Link>)}
+      <Link href="/" onClick={closeMenu}>Home</Link>
+      <Link href="/about" onClick={closeMenu}>About</Link>
       <details className="brand-services-dropdown">
-        <summary>Services <span aria-hidden="true">⌄</span></summary>
+        <summary>{serviceMenuLabel}<span aria-hidden="true">⌄</span></summary>
         <div className="brand-services-menu">
-          <Link href="/services" onClick={closeMenu}>All services</Link>
+          <Link href="/services" onClick={closeMenu}>All {serviceMenuLabel.toLowerCase()}</Link>
           {services.length ? services.map((service) => <Link href={`/services/${service.slug}`} key={service.slug} onClick={closeMenu}>{service.title}</Link>) : <span>No service details published yet.</span>}
         </div>
       </details>
-      {mainLinks.slice(2).map((item) => <Link href={item.href} key={item.href} onClick={closeMenu}>{item.title}</Link>)}
+      <Link href="/contact" onClick={closeMenu}>Contact</Link>
+      {showGlobalReach ? <Link href="/global-reach" onClick={closeMenu}>Our Global Reach</Link> : null}
     </nav>
   </header>
 }

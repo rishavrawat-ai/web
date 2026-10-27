@@ -1,5 +1,8 @@
 # Frontend asset sources
 
+- `public/about-story.webp`, `about-impact.webp`, `about-responsible.webp`, and `about-presence.webp` — AI-generated for the separate About pages, based on the existing story, impact, responsibility, and regional planning content. Optimized as 1536 × 1024 WebP assets. The people and workplaces are illustrative; the globe is conceptual and does not mark confirmed office locations.
+- `public/ignitia-leadership.webp` — AI-generated conceptual African leadership summit scene for the IGNITIA announcement; not a photograph of an actual event.
+
 - `public/workhour-business-logo.jpeg` — supplied Workhour Business logo from `WhatsApp Image 2026-09-21 at 10.23.55 AM.jpeg`. Preserved without replacement.
 - `public/hero-innovate.webp`, `hero-progress.webp`, `hero-evolve.webp`, and `hero-transform.webp` — AI-generated illustrative corporate scenes for the four supplied homepage headlines.
 - `public/business-inceptura.webp` — illustrative strategy and business-creation scene.

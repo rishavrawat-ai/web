@@ -7,7 +7,7 @@ if (!targetName) throw new Error('Target db required')
 const target = new URL(source)
 target.pathname = `/${targetName}`
 process.env.DATABASE_URL = target.toString()
-process.env.NODE_ENV = 'production'
+Reflect.set(process.env, 'NODE_ENV', 'production')
 process.env.PAYLOAD_MIGRATING = 'true'
 const { default: config } = await import(`../src/payload.config?database=${encodeURIComponent(target.toString())}`)
 const { getPayload } = await import('payload')

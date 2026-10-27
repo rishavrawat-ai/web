@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import type { Business, Media } from '../../payload-types'
+import { getBrandSiteDefinition } from '../../content/brandSiteDefinitions'
 import { BrandSiteHeader, type BrandNavService } from './BrandSiteHeader'
 
 function safeColor(value: string | null | undefined, fallback: string): string {
@@ -15,6 +16,7 @@ function publishedLogo(value: number | Media | null | undefined): Media | null {
 
 export function BrandSiteFrame({ business, services, children }: { business: Business; services: BrandNavService[]; children: ReactNode }) {
   const logo = publishedLogo(business.logo)
+  const definition = getBrandSiteDefinition(business.slug)
   const style = {
     '--brand-primary': safeColor(business.brandPrimaryColor, '#071a31'),
     '--brand-accent': safeColor(business.brandAccentColor, '#2baaa3'),
@@ -22,7 +24,7 @@ export function BrandSiteFrame({ business, services, children }: { business: Bus
   } as CSSProperties
 
   return <div className="brand-site" style={style}>
-    <BrandSiteHeader name={business.name} logo={logo ? { url: logo.url!, alt: logo.alt || business.name, width: logo.width, height: logo.height } : null} services={services} />
+    <BrandSiteHeader name={business.name} logo={logo ? { url: logo.url!, alt: logo.alt || business.name, width: logo.width, height: logo.height } : null} services={services} serviceMenuLabel={definition.serviceMenuLabel} showGlobalReach={definition.showGlobalReach} />
     {children}
     <footer className="brand-site-footer">
       <div className="brand-footer-top">
@@ -30,8 +32,8 @@ export function BrandSiteFrame({ business, services, children }: { business: Bus
         <p>{business.name}</p>
       </div>
       <nav aria-label={`${business.name} footer navigation`}>
-        <Link href="/">Home</Link><Link href="/about">About</Link><Link href="/services">Services</Link>
-        <Link href="/contact">Contact</Link><Link href="/global-reach">Our Global Reach</Link>
+        <Link href="/">Home</Link><Link href="/about">About</Link><Link href="/services">{definition.serviceMenuLabel}</Link>
+        <Link href="/contact">Contact</Link>{definition.showGlobalReach ? <Link href="/global-reach">Our Global Reach</Link> : null}
       </nav>
       <small>© {business.name}</small>
     </footer>

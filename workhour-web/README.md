@@ -72,6 +72,8 @@ npm run seed:homepage
 
 The seed creates the seven businesses and the Homepage global as drafts. It creates only missing records, so rerunning it preserves existing edits. It does not create URLs, upload missing images, or publish unresolved content.
 
+See [Media storage](./docs/media-storage.md) for local upload behavior, S3 deployment configuration, and the existing-file cutover steps.
+
 ## Verification commands
 
 ```powershell

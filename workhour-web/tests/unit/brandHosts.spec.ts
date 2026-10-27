@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { resolveBrandSlug } from '../../src/lib/brandHosts'
+import { defaultLocalBrandHostMapping, resolveBrandSlug } from '../../src/lib/brandHosts'
 
 describe('brand host resolution', () => {
   it('requires an exact configured hostname and strips the port', () => {
@@ -14,5 +14,19 @@ describe('brand host resolution', () => {
     const mapping = 'staff.example.test=employaa,think.example.test=thinkrunspace'
     expect(resolveBrandSlug('staff.example.test', mapping)).toBe('employaa')
     expect(resolveBrandSlug('other.example.test', mapping)).toBeNull()
+  })
+
+  it('has an explicit localhost hostname for each brand', () => {
+    const expected = new Map([
+      ['inceptura.localhost', 'inceptura'],
+      ['employaa.localhost', 'employaa'],
+      ['remunerax.localhost', 'remunerax'],
+      ['gotravelglobal.localhost', 'gotravelglobal'],
+      ['elevatrain.localhost', 'elevatrain'],
+      ['thinkrunspace.localhost', 'thinkrunspace'],
+      ['leaderspinnacle.localhost', 'leaderspinnacle'],
+    ])
+    for (const [host, slug] of expected) expect(resolveBrandSlug(host)).toBe(slug)
+    expect(defaultLocalBrandHostMapping.split(',')).toHaveLength(expected.size)
   })
 })

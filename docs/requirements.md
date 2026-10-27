@@ -533,3 +533,12 @@ Status: **Provisional; pending client confirmation.** This list is separate from
 - North America: Canada, Mexico
 
 Sitemap WHB (2) places Australia under Asia and labels Mexico as “USA: Mexico”. For this preview, Australia is grouped under Oceania and Mexico under North America. The source does not confirm the USA as a separate location, so no separate USA entry is added. Confirm the groupings and country list with the client before treating them as final.
+
+
+## Brand-site content checkpoint: six additional brands
+
+The Employaa brand-site foundation is reused for Inceptura, Remunerax, Go Travel Global, Elevatrain, ThinkRunSpace, and Leaders Pinnacle. Each site has Home, About, Services/Offerings/Trainings, and Contact pages. Inceptura, ThinkRunSpace, and Leaders Pinnacle also have Our Global Reach pages, as requested.
+
+Menu titles are retained exactly from the current client instruction. The listed service names are navigation/content headings; no distinct per-service descriptions were supplied for these six sites, so their detail pages remain empty states. Remunerax's Employee Self Service Portal is listed as a service name only; no employee portal functionality is specified.
+
+No brand-specific contact details, confirmed office/location lists, or dedicated logos were supplied for this checkpoint. The shared layout displays an existing published Business logo when available and otherwise uses the brand name as text. Global Reach pages state that brand-specific location information is pending; they do not treat broad market-presence copy as confirmed offices. Main-site Business introductions and brandSiteUrl values remain independent and unchanged. Configure exact production hostnames only after the client confirms deployment and DNS details.

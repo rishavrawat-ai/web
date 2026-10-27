@@ -1,0 +1,27 @@
+{
+  "method": "Built-in image_gen",
+  "assets": [
+    {
+      "name": "story",
+      "prompt": "Use case: photorealistic-natural. Create a premium corporate editorial photograph for Workhour Business website, landscape 3:2, realistic soft daylight, muted navy, teal, sage and warm neutral palette, believable natural people and architecture, subtle film texture, no text, logos, watermarks or futuristic effects. This is illustrative, not an actual company location. A candid wide environmental portrait of three business specialists, two South Asian colleagues and one other colleague, walking together through a contemporary shared workspace, carrying a closed notebook, natural conversation, people positioned center-right, beautiful architectural depth, relaxed professional clothes, no staged boardroom meeting.",
+      "path": "public/about-story-v2.webp"
+    },
+    {
+      "name": "impact",
+      "prompt": "Use case: photorealistic-natural. Create a premium corporate editorial photograph for Workhour Business website, landscape 3:2, realistic soft daylight, muted navy, teal, sage and warm neutral palette, believable natural people and architecture, subtle film texture, no text, logos, watermarks or futuristic effects. This is illustrative, not an actual company location. A corporate learning workshop in progress, viewed from the back and side of a small audience of professionals, a female facilitator demonstrating an idea at an unmarked whiteboard, daylight and teal upholstered chairs, credible lived-in training environment. Wide composition with depth, faces natural and small in frame.",
+      "path": "public/about-impact-v2.webp"
+    },
+    {
+      "name": "responsible",
+      "prompt": "Use case: photorealistic-natural. Create a premium corporate editorial photograph for Workhour Business website, landscape 3:2, realistic soft daylight, muted navy, teal, sage and warm neutral palette, believable natural people and architecture, subtle film texture, no text, logos, watermarks or futuristic effects. This is illustrative, not an actual company location. Quiet close environmental portrait of two professional colleagues listening attentively to one another across a small desk, respectful workplace conversation, one South Asian woman in navy and one older colleague in neutral clothes, hands resting naturally, window light, simple notebook, emphasis on attentive listening rather than a boardroom group.",
+      "path": "public/about-responsible-v2.webp"
+    },
+    {
+      "name": "presence",
+      "prompt": "Use case: photorealistic-natural. Create a premium corporate editorial photograph for Workhour Business website, landscape 3:2, realistic soft daylight, muted navy, teal, sage and warm neutral palette, believable natural people and architecture, subtle film texture, no text, logos, watermarks or futuristic effects. This is illustrative, not an actual company location. Architectural travel photograph of a spacious contemporary airport concourse with large windows, a lone business traveller seen from behind pulling a carry-on case, distant airplane outside, warm daylight, clean stone and muted teal seating. No identifiable airport, no signage or letters, no map, no globe. Strong receding architectural lines and calm business mobility theme.",
+      "path": "public/about-presence-v2.webp"
+    }
+  ],
+  "optimization": "1536 × 1024 WebP, quality 83; Next Image responsive delivery",
+  "usage": "Illustrative scenes, not actual Workhour people or offices"
+}

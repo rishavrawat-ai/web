@@ -1,5 +1,6 @@
 import 'dotenv/config'
 import { Pool } from 'pg'
+import type { SQLWrapper } from 'drizzle-orm'
 
 const sourceURL = process.env.DATABASE_URL
 if (!sourceURL) throw new Error('DATABASE_URL is required')
@@ -40,7 +41,7 @@ if (!originHistory.rows.some((row) => row.name === 'dev') || !originHistory.rows
 await clone.end()
 
 process.env.DATABASE_URL = cloneURL.toString()
-process.env.NODE_ENV = 'development'
+Reflect.set(process.env, 'NODE_ENV', 'development')
 process.env.PAYLOAD_MIGRATING = 'true'
 const { default: config } = await import(`../src/payload.config?database=${encodeURIComponent(cloneURL.toString())}`)
 const { getPayload } = await import('payload')
@@ -48,18 +49,18 @@ const { assertExistingSchema } = await import('../src/lib/baselineSchemaGuard')
 const { migrations } = await import('../src/migrations')
 const payload = await getPayload({ config })
 try {
-  await assertExistingSchema({ execute: (query: unknown) => payload.db.drizzle.execute(query) } as Parameters<typeof assertExistingSchema>[0])
+  await assertExistingSchema({ execute: (query: string | SQLWrapper) => payload.db.drizzle.execute(query) } as Parameters<typeof assertExistingSchema>[0])
   const migrationsPool = new Pool({ connectionString: cloneURL.toString() })
   await migrationsPool.query("UPDATE payload_migrations SET batch=0 WHERE name='dev' AND batch=-1")
   await migrationsPool.end()
   const baseline = migrations.find((item) => item.name === '20260921_000000_payload_core_baseline')!
-  await payload.db.migrate({ migrations: [baseline] })
+  await payload.db.migrate({ migrations: [baseline] as never })
   const baselineRow = await payload.find({ collection: 'payload-migrations', overrideAccess: true, where: { name: { equals: baseline.name } }, limit: 1 })
   if (!baselineRow.docs[0]) throw new Error('Verified baseline migration was not recorded')
   await payload.create({ collection: 'payload-migrations', overrideAccess: true, data: { name: '20261009_012208_pages_services', batch: baselineRow.docs[0].batch } })
   const pending = migrations.filter((item) => ['20261009_032107_posts', '20261009_042723_brand_site_foundation'].includes(item.name))
-  await payload.db.migrate({ migrations: pending })
-  await payload.db.migrate({ migrations })
+  await payload.db.migrate({ migrations: pending as never })
+  await payload.db.migrate({ migrations: migrations as never })
 } finally {
   await payload.destroy()
 }

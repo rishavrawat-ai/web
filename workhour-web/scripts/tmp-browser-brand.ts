@@ -90,16 +90,14 @@ try {
   const homeRow = await pool.query("SELECT id,summary FROM brand_pages WHERE business_id=(SELECT id FROM businesses WHERE slug='employaa' LIMIT 1) AND slug='home' LIMIT 1")
   if (!homeRow.rowCount) throw new Error('Employaa home record is missing')
   const homeID = homeRow.rows[0].id
-  const originalSummary = homeRow.rows[0].summary as string
   const editURL = `${adminBase}/admin/collections/brand-pages/${homeID}`
   await admin.goto(editURL, { waitUntil: 'domcontentloaded' })
   const summaryField = admin.locator('textarea[name="summary"], input[name="summary"]').first()
   await summaryField.fill('Admin workflow published version one')
-  let saveRequest: unknown
   const draftResponseEvent = admin.waitForResponse((response) => response.url().includes(`/api/brand-pages/${homeID}`) && response.request().method() === 'PATCH')
   await admin.getByRole('button', { name: /save draft/i }).click()
   const draftResponsePayload = await draftResponseEvent
-  saveRequest = { status: draftResponsePayload.status(), body: await draftResponsePayload.json().catch(() => null) }
+  const saveRequest = { status: draftResponsePayload.status(), body: await draftResponsePayload.json().catch(() => null) }
   if (draftResponsePayload.status() < 200 || draftResponsePayload.status() >= 300) throw new Error('Admin Save Draft request failed')
   await desktop.goto(base, { waitUntil: 'domcontentloaded' })
   if ((await desktop.locator('main').innerText()).includes('Admin workflow published version one')) throw new Error('Admin draft edit leaked to public Home')
@@ -110,7 +108,7 @@ try {
   if (publishResponse.status() < 200 || publishResponse.status() >= 300) throw new Error('Admin Publish request failed')
   await desktop.goto(base, { waitUntil: 'domcontentloaded' })
   if (!(await desktop.locator('main').innerText()).includes('Admin workflow published version one')) throw new Error('Published Admin edit did not update the public Home without rebuilding')
-  console.log(JSON.stringify({ routes: routeResults, desktopViewport: '1440px passed', mobileViewport: '390px passed', keyboardDropdown: 'passed desktop/mobile', brandSlugIsolation: 'passed', unknownHost: 'no brand selected', draftRoute: draftResponse.status(), publicAPI: 'resolved-brand and published filters passed', adminSaveDraftRequest: saveRequest, publicDraftLeak: 'none', adminPublishRequestStatus: publishResponse.status(), dynamicPublishedUpdate: 'visible without rebuild', screenshots: ['artifacts/brand-site/employaa-desktop.png', 'artifacts/brand-site/employaa-about-desktop.png', 'artifacts/brand-site/employaa-mobile.png'] }))
+  console.log(JSON.stringify({ routes: routeResults, desktopViewport: '1440px passed', mobileViewport: '390px passed', keyboardDropdown: 'passed desktop/mobile', brandSlugIsolation: 'passed', unknownHost: 'no brand selected', draftRoute: draftResponse.status, publicAPI: 'resolved-brand and published filters passed', adminSaveDraftRequest: saveRequest, publicDraftLeak: 'none', adminPublishRequestStatus: publishResponse.status(), dynamicPublishedUpdate: 'visible without rebuild', screenshots: ['artifacts/brand-site/employaa-desktop.png', 'artifacts/brand-site/employaa-about-desktop.png', 'artifacts/brand-site/employaa-mobile.png'] }))
   await pool.end()
   await unlink('.tmp-brand-admin.json')
 } finally {

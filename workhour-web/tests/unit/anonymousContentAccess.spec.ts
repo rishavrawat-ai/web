@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { authenticated, publishedOrAuthenticated } from '../../src/access/contentAccess'
+import { authenticated, publishedBrandPagesByHost, publishedBusinessesByHost, publishedOrAuthenticated } from '../../src/access/contentAccess'
 import { readPublishedHomepageContent } from '../../src/lib/homepage'
 import type { Business, Homepage } from '../../src/payload-types'
 
@@ -21,6 +21,12 @@ describe('public CMS access rules', () => {
 
   it('allows authenticated CMS writes', () => {
     expect(authenticated({ req: { user: { id: 1 } } } as never)).toBe(true)
+  })
+
+  it('does not let a forged forwarded brand header override the actual host', async () => {
+    const req = { user: null, headers: new Headers({ host: 'inceptura.localhost', 'x-brand-site-host': 'remunerax.localhost' }) }
+    expect(publishedBusinessesByHost({ req } as never)).toEqual({ _status: { equals: 'published' } })
+    expect(await publishedBrandPagesByHost({ req } as never)).toBe(false)
   })
 
   it('uses anonymous Local API access and excludes draft content', async () => {

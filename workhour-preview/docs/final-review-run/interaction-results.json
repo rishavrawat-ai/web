@@ -1,0 +1,17 @@
+{
+  "ui": {
+    "mobileMenuOpen": true,
+    "mobileDropdown": true,
+    "searchResult": "/brands/employaa/services/permanent-hiring",
+    "searchClosed": true,
+    "carouselNext": "Progress never sleeps",
+    "carouselPaused": true,
+    "tabPanelLabel": "business-tab-remunerax",
+    "portalLink": "/brands/remunerax/services/employee-self-service-portal",
+    "portalDescription": true,
+    "desktopKeyboardDropdown": true,
+    "reducedMotionPrefersReduce": true,
+    "focusStateCheck": true
+  },
+  "clientErrors": []
+}

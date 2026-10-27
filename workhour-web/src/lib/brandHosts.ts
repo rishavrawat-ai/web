@@ -1,4 +1,12 @@
-const defaultLocalMapping = 'employaa.localhost=employaa'
+export const defaultLocalBrandHostMapping = [
+  'inceptura.localhost=inceptura',
+  'employaa.localhost=employaa',
+  'remunerax.localhost=remunerax',
+  'gotravelglobal.localhost=gotravelglobal',
+  'elevatrain.localhost=elevatrain',
+  'thinkrunspace.localhost=thinkrunspace',
+  'leaderspinnacle.localhost=leaderspinnacle',
+].join(',')
 
 function normalizedHostname(value: string): string | null {
   try {
@@ -10,7 +18,7 @@ function normalizedHostname(value: string): string | null {
   }
 }
 
-export function parseBrandHostMap(configured = process.env.BRAND_HOSTS ?? defaultLocalMapping): Map<string, string> {
+export function parseBrandHostMap(configured = process.env.BRAND_HOSTS ?? defaultLocalBrandHostMapping): Map<string, string> {
   const mappings = new Map<string, string>()
   for (const entry of configured.split(',')) {
     const separator = entry.indexOf('=')

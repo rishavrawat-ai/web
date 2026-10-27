@@ -9,7 +9,7 @@ const importer = spawnSync(process.execPath, ['--import=tsx/esm', 'scripts/impor
 if (importer.status !== 0) throw new Error(importer.stderr || importer.stdout || 'brand import failed')
 process.stdout.write(importer.stdout)
 process.env.DATABASE_URL = source.toString()
-process.env.NODE_ENV = 'development'
+Reflect.set(process.env, 'NODE_ENV', 'development')
 process.env.PAYLOAD_MIGRATING = 'true'
 const { default: config } = await import(`../src/payload.config?database=${encodeURIComponent(source.toString())}`)
 const { getPayload, createLocalReq } = await import('payload')
@@ -36,7 +36,7 @@ try {
   const anonymousDraftRead = await payload.find({ collection: 'brand-pages', depth: 0, draft: true, limit: 1, overrideAccess: false, req: employaaReq, user: null, where: { and: [{ business: { equals: employaa.docs[0].id } }, { slug: { equals: 'draft-check' } }] } })
   if (anonymousDraftRead.docs.length) throw new Error('Draft brand page was visible to anonymous Local API')
   let anonymousWriteBlocked = false
-  try { await payload.create({ collection: 'brand-pages', data: { business: employaa.docs[0].id, title: 'Anonymous', slug: 'anonymous', pageType: 'page' }, overrideAccess: false, user: null }) } catch { anonymousWriteBlocked = true }
+  try { await payload.create({ collection: 'brand-pages', data: { business: employaa.docs[0].id, title: 'Anonymous', slug: 'anonymous', pageType: 'page' }, draft: true, overrideAccess: false, user: null }) } catch { anonymousWriteBlocked = true }
   if (!anonymousWriteBlocked) throw new Error('Anonymous Brand Page creation was not denied')
 
   const randomPassword = crypto.randomUUID() + crypto.randomUUID()

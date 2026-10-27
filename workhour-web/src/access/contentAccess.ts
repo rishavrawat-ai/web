@@ -15,9 +15,17 @@ export const publishedOrAuthenticated: Access = ({ req }) => {
   }
 }
 
+function requestBrandSlug(req: { headers?: Headers | null }): string | null {
+  const hostBrand = resolveBrandSlug(req.headers?.get('host'))
+  if (!hostBrand) return null
+  const forwardedBrand = resolveBrandSlug(req.headers?.get('x-brand-site-host'))
+  if (forwardedBrand && forwardedBrand !== hostBrand) return null
+  return hostBrand
+}
+
 export const publishedBusinessesByHost: Access = ({ req }) => {
   if (req.user) return true
-  const brandSlug = resolveBrandSlug(req.headers?.get('x-brand-site-host') ?? req.headers?.get('host'))
+  const brandSlug = requestBrandSlug(req)
   if (!brandSlug) return { _status: { equals: 'published' } } satisfies Where
   const where: Where = {
     and: [
@@ -30,7 +38,7 @@ export const publishedBusinessesByHost: Access = ({ req }) => {
 
 export const publishedBrandPagesByHost: Access = async ({ req }) => {
   if (req.user) return true
-  const brandSlug = resolveBrandSlug(req.headers?.get('x-brand-site-host') ?? req.headers?.get('host'))
+  const brandSlug = requestBrandSlug(req)
   if (!brandSlug) return false
   const businesses = await req.payload.find({
     collection: 'businesses',

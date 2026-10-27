@@ -1,0 +1,30 @@
+{
+  "routesChecked": 142,
+  "descriptionsChecked": 78,
+  "screenshots": [
+    "elevatrain-desktop.png",
+    "elevatrain-mobile.png",
+    "elevatrain-service-desktop.png",
+    "employaa-desktop.png",
+    "employaa-mobile.png",
+    "employaa-service-desktop.png",
+    "go-travel-global-desktop.png",
+    "go-travel-global-mobile.png",
+    "go-travel-global-service-desktop.png",
+    "inceptura-desktop.png",
+    "inceptura-mobile.png",
+    "inceptura-service-desktop.png",
+    "leaders-pinnacle-desktop.png",
+    "leaders-pinnacle-mobile.png",
+    "leaders-pinnacle-service-desktop.png",
+    "remunerax-desktop.png",
+    "remunerax-mobile.png",
+    "remunerax-service-desktop.png",
+    "thinkrunspace-desktop.png",
+    "thinkrunspace-mobile.png",
+    "thinkrunspace-service-desktop.png"
+  ],
+  "overflows": [],
+  "failedImages": [],
+  "errors": []
+}

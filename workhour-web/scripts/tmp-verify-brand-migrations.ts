@@ -1,6 +1,8 @@
 import 'dotenv/config'
 
 import { Pool } from 'pg'
+import type { Payload } from 'payload'
+import type { SQLWrapper } from 'drizzle-orm'
 
 const sourceURL = process.env.DATABASE_URL
 if (!sourceURL) throw new Error('DATABASE_URL is required')
@@ -31,9 +33,9 @@ function targetURL(name: string): string {
   return target.toString()
 }
 
-async function withPayload<T>(url: string, mode: 'production' | 'development', run: (payload: any) => Promise<T>): Promise<T> {
+async function withPayload<T>(url: string, mode: 'production' | 'development', run: (payload: Payload) => Promise<T>): Promise<T> {
   process.env.DATABASE_URL = url
-  process.env.NODE_ENV = mode
+  Reflect.set(process.env, 'NODE_ENV', mode)
   process.env.PAYLOAD_MIGRATING = 'true'
   const { default: config } = await import(`../src/payload.config?database=${encodeURIComponent(url)}`)
   const { getPayload } = await import('payload')
@@ -81,7 +83,7 @@ await beforePool.end()
 await withPayload(upgradeURL, 'development', async (payload) => {
   const { assertExistingSchema } = await import('../src/lib/baselineSchemaGuard')
   await assertExistingSchema({
-    execute: (query: unknown) => payload.db.drizzle.execute(query),
+    execute: (query: string | SQLWrapper) => payload.db.drizzle.execute(query),
   } as Parameters<typeof assertExistingSchema>[0])
   const history = await migrationNames(upgradeURL)
   if (!history.includes('dev') || !history.includes('20260922_045859_homepage_content')) throw new Error('Development clone history changed from the expected pre-adoption state')

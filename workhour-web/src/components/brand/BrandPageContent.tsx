@@ -18,7 +18,7 @@ export function BrandPageContent({ page, brandName, services = [] }: { page: Bra
       <h1>{page.title}</h1>
       {page.summary ? <p className="brand-content-summary">{page.summary}</p> : null}
       {page.introduction ? <p className="brand-content-introduction">{page.introduction}</p> : null}
-      {page.slug === 'services' ? <ServicesListing services={services} /> : null}
+      {page.slug === 'services' ? <ServicesListing services={services} label={page.title} /> : null}
       {page.sections?.length ? <div className="brand-content-sections">
         {page.sections.map((section, index) => <section key={section.id ?? `${section.heading}-${index}`}>
           <h2>{section.heading}</h2>
@@ -29,17 +29,17 @@ export function BrandPageContent({ page, brandName, services = [] }: { page: Bra
           {section.cta?.label && section.cta.url ? <p><Link className="brand-text-link" href={section.cta.url}>{section.cta.label} <span aria-hidden="true">↗</span></Link></p> : null}
         </section>)}
       </div> : null}
-      {!hasDetails && page.slug === 'global-reach' ? <p className="brand-empty-state">Employaa-specific office and location information has not been supplied.</p> : null}
-      {!hasDetails && page.slug === 'contact' ? <p className="brand-empty-state">Employaa contact details have not been supplied.</p> : null}
+      {!hasDetails && page.slug === 'global-reach' ? <p className="brand-empty-state">{brandName}-specific location information has not been supplied.</p> : null}
+      {!hasDetails && page.slug === 'contact' ? <p className="brand-empty-state">{brandName} contact details have not been supplied.</p> : null}
       {!hasDetails && servicePage ? <p className="brand-empty-state">A description for this service has not been supplied.</p> : null}
-      {!hasDetails && !['global-reach', 'contact'].includes(page.slug) && !servicePage ? <p className="brand-empty-state">Details to be supplied.</p> : null}
+      {!hasDetails && !['global-reach', 'contact', 'services'].includes(page.slug) && !servicePage ? <p className="brand-empty-state">Details to be supplied.</p> : null}
     </div>
   </main>
 }
 
-function ServicesListing({ services }: { services: BrandNavService[] }) {
+function ServicesListing({ services, label }: { services: BrandNavService[]; label: string }) {
   return services.length ? <section className="brand-service-listing" aria-labelledby="brand-service-list-heading">
-    <h2 id="brand-service-list-heading">Services</h2>
+    <h2 id="brand-service-list-heading">{label}</h2>
     <div className="brand-service-grid">{services.map((service) => <article key={service.slug}>
       <h3>{service.title}</h3><Link className="brand-text-link" href={`/services/${service.slug}`}>Explore service <span aria-hidden="true">↗</span></Link>
     </article>)}</div>

@@ -13,6 +13,7 @@
     "db:adopt-dev-pushed-schema": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/adopt-dev-pushed-schema.ts",
     "import:preview-inner-content": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/import-preview-inner-content.ts",
     "import:employaa-brand": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/import-employaa-brand.ts",
+    "import:brand-sites": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/import-brand-sites.ts",
     "seed:homepage": "cross-env NODE_OPTIONS=--no-deprecation tsx scripts/seed-homepage.ts",
     "lint": "cross-env NODE_OPTIONS=--no-deprecation eslint .",
     "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
@@ -22,9 +23,12 @@
     "test:int": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config ./vitest.config.mts"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "3.90.1",
     "@payloadcms/next": "3.90.1",
     "@payloadcms/richtext-lexical": "3.90.1",
+    "@payloadcms/storage-s3": "^3.90.1",
     "@payloadcms/ui": "3.90.1",
+    "@tailwindcss/postcss": "^4.1.13",
     "cross-env": "^7.0.3",
     "dotenv": "16.4.7",
     "graphql": "^16.8.1",
@@ -33,8 +37,6 @@
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "sharp": "0.35.4",
-    "@payloadcms/db-postgres": "3.90.1",
-    "@tailwindcss/postcss": "^4.1.13",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {

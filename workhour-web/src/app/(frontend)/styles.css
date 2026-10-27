@@ -90,3 +90,6 @@
 .homepage-error{margin:0;padding-top:18px;padding-bottom:18px;background:#fff4e7;color:#75471d}
 .media-visual img{object-fit:cover;z-index:0}
 @media(max-width:700px){.intro-empty{margin:34px 0 0}.hero-empty{min-height:calc(100vh - 112px)}.announcement-image{max-height:260px}}
+.intro{background-image:linear-gradient(90deg,rgba(255,255,255,.9),rgba(255,255,255,.72)),url('/hero-progress.webp');background-position:center;background-size:cover}
+.business-section{background-image:linear-gradient(90deg,rgba(248,250,249,.91),rgba(248,250,249,.78)),url('/business-thinkrunspace.webp');background-position:center;background-size:cover}
+.intro>.eyebrow,.section-intro .eyebrow{font-size:14px;letter-spacing:.16em;margin-bottom:26px}

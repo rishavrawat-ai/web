@@ -5,8 +5,10 @@ import { useEffect, useState } from 'react'
 import { businesses, media, services } from '../data/content'
 import { brandSites, brandHref, serviceSlug } from '../data/brand-sites'
 import { getBrandServiceCopy } from '../data/brand-service-content'
+import { aboutSections } from '../data/about'
 
 const searchable = [
+  ...aboutSections.map(section => ({ title: section.label, body: `${section.intro} ${section.paragraphs.join(' ')}`, href: `/about/${section.slug}`, type: 'About Us' })),
   ...businesses.map(item => ({ title: item.name, body: `${item.intro} ${item.detail}`, href: `/businesses/${item.slug}`, type: 'Business' })),
   ...brandSites.flatMap(brand => [
     { title: `${brand.name} brand site`, body: `${brand.name} ${brand.strapline} home about contact`, href: brandHref(brand), type: 'Brand site' },
@@ -19,7 +21,7 @@ const searchable = [
   { title: 'Careers', body: 'Careers capabilities businesses service areas', href: '/careers', type: 'Page' },
   { title: 'Contact Us', body: 'Find a service area businesses', href: '/contact', type: 'Page' },
   { title: 'Global Presence', body: 'Market groupings Asia India Malaysia Oceania Australia Middle East UAE Africa Kenya Zimbabwe Malawi Rwanda North America Canada Mexico', href: '/global-presence', type: 'Page' },
-  { title: 'Announcement', body: 'IGNITA featured announcement', href: '/announcements#ignita', type: 'Page' },
+  { title: 'Announcement', body: 'IGNITIA leadership innovation Africa featured announcement', href: '/announcements/ignitia', type: 'Page' },
 ]
 
 export default function SearchButton() {

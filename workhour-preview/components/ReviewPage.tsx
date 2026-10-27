@@ -5,6 +5,7 @@ import { brandHref, brandSites } from '../data/brand-sites'
 import { homepageBusinessIntros } from '../data/business-content'
 import MainHeader from './MainHeader'
 import MainFooter from './MainFooter'
+import IgnitiaFeature from './IgnitiaFeature'
 
 type PageKind = 'about' | 'announcements' | 'businesses' | 'careers' | 'contact' | 'news-media' | 'global-presence'
 
@@ -47,12 +48,11 @@ function ContactPage() {
 }
 
 function AnnouncementPage() {
-  const featured = media.find(item => item.slug === 'ignita')!
-  return <section className="announcement-page-feature" id="ignita"><div className="announcement-page-image"><Image src={featured.image} alt="Abstract amber light and glass forms; illustrative editorial artwork" fill sizes="(max-width: 700px) 100vw, 62vw" /></div><div className="announcement-page-copy"><p className="eyebrow teal">Featured announcement</p><h2>IGNITA</h2></div></section>
+  return <IgnitiaFeature />
 }
 
 function NewsMediaPage() {
-  return <div className="review-media-list media-archive">{media.map(item => <article id={item.slug} key={item.slug}><div className={`media-visual ${item.tone}`}><Image src={item.image} alt={item.alt} fill sizes="(max-width: 700px) 100vw, 50vw" /></div><p className="eyebrow teal">{item.kicker}</p><h2>{item.title}</h2><p>{item.text}</p><Link className="text-link" href={item.slug === 'ignita' ? '/announcements#ignita' : item.slug === 'mindfulness' ? '/brands/elevatrain/trainings/mindfulness' : '/brands/leaders-pinnacle/services/bespoke-corporate-events'}>{item.link} <span aria-hidden="true">↗</span></Link></article>)}</div>
+  return <div className="review-media-list media-archive">{media.map(item => <article id={item.slug} key={item.slug}><div className={`media-visual ${item.tone}`}><Image src={item.image} alt={item.alt} fill sizes="(max-width: 700px) 100vw, 50vw" /></div><p className="eyebrow teal">{item.kicker}</p><h2>{item.title}</h2><p>{item.text}</p><Link className="text-link" href={item.slug === 'ignita' ? '/announcements/ignitia' : item.slug === 'mindfulness' ? '/brands/elevatrain/trainings/mindfulness' : '/brands/leaders-pinnacle/services/bespoke-corporate-events'}>{item.link} <span aria-hidden="true">↗</span></Link></article>)}</div>
 }
 
 function GlobalPresencePage() {

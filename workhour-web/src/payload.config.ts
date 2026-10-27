@@ -12,6 +12,7 @@ import { Posts } from './collections/Posts'
 import { BrandPages } from './collections/BrandPages'
 import { Homepage } from './globals/Homepage'
 import { migrations } from './migrations'
+import { createMediaStoragePlugin } from './storage/mediaStorage'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -35,5 +36,5 @@ export default buildConfig({
     },
     prodMigrations: migrations,
   }),
-  plugins: [],
+  plugins: [createMediaStoragePlugin()],
 })

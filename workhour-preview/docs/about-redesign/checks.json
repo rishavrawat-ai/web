@@ -1,0 +1,149 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "slug": "our-story",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Our Story | Workhour Business",
+      "description": "Workhour Business brings together specialist services that support organizations from early planning through day-to-day operations and growth."
+    },
+    {
+      "width": 1440,
+      "slug": "our-impact",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Our Impact | Workhour Business",
+      "description": "Connecting organizations with the right capabilities at each stage of the business journey."
+    },
+    {
+      "width": 1440,
+      "slug": "responsible-business",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Responsible Business | Workhour Business",
+      "description": "Clear expectations, thoughtful planning, and respect for the people behind every business decision."
+    },
+    {
+      "width": 1440,
+      "slug": "presence",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Presence | Workhour Business",
+      "description": "Explore the regional market context behind the Workhour Business planning material."
+    },
+    {
+      "width": 1440,
+      "slug": "overview",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "About Us | Workhour Business",
+      "description": "Explore the Workhour Business story, impact, approach to responsible business, and regional market context."
+    },
+    {
+      "width": 768,
+      "slug": "our-story",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Our Story | Workhour Business",
+      "description": "Workhour Business brings together specialist services that support organizations from early planning through day-to-day operations and growth."
+    },
+    {
+      "width": 768,
+      "slug": "our-impact",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Our Impact | Workhour Business",
+      "description": "Connecting organizations with the right capabilities at each stage of the business journey."
+    },
+    {
+      "width": 768,
+      "slug": "responsible-business",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Responsible Business | Workhour Business",
+      "description": "Clear expectations, thoughtful planning, and respect for the people behind every business decision."
+    },
+    {
+      "width": 768,
+      "slug": "presence",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Presence | Workhour Business",
+      "description": "Explore the regional market context behind the Workhour Business planning material."
+    },
+    {
+      "width": 768,
+      "slug": "overview",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "About Us | Workhour Business",
+      "description": "Explore the Workhour Business story, impact, approach to responsible business, and regional market context."
+    },
+    {
+      "width": 390,
+      "slug": "our-story",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Our Story | Workhour Business",
+      "description": "Workhour Business brings together specialist services that support organizations from early planning through day-to-day operations and growth."
+    },
+    {
+      "width": 390,
+      "slug": "our-impact",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Our Impact | Workhour Business",
+      "description": "Connecting organizations with the right capabilities at each stage of the business journey."
+    },
+    {
+      "width": 390,
+      "slug": "responsible-business",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Responsible Business | Workhour Business",
+      "description": "Clear expectations, thoughtful planning, and respect for the people behind every business decision."
+    },
+    {
+      "width": 390,
+      "slug": "presence",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "Presence | Workhour Business",
+      "description": "Explore the regional market context behind the Workhour Business planning material."
+    },
+    {
+      "width": 390,
+      "slug": "overview",
+      "overflow": false,
+      "broken": 0,
+      "h1": 1,
+      "title": "About Us | Workhour Business",
+      "description": "Explore the Workhour Business story, impact, approach to responsible business, and regional market context."
+    }
+  ],
+  "interactions": [
+    "Desktop dropdown links",
+    "Direct loading and refresh",
+    "Browser back and forward",
+    "Keyboard Enter, Tab, Escape and restored focus",
+    "Mobile touch menu and all four links",
+    "Reduced motion",
+    "Unknown section returns 404"
+  ],
+  "browserErrors": []
+}
