@@ -1,3 +1,4 @@
+import { brandBase } from './brand-domains'
 import { businesses } from './content'
 import { businessContent } from './business-content'
 
@@ -22,7 +23,7 @@ export const brandSites: BrandSite[] = [
   { slug: 'leaders-pinnacle', name: 'Leaders Pinnacle', strapline: 'B2B events and market intelligence', menuLabel: 'Services', includeReach: true, image: '/business-leaders-pinnacle.webp', mark: 'LP', services: ['Strategic Conferences', 'Trade Expos & Exhibitions', 'Bespoke Corporate Events', 'Webinars & Virtual Events', 'Podcast & Content Series'] },
 ]
 
-export const brandHref = (brand: BrandSite) => `/brands/${brand.slug}`
+export const brandHref = (brand: BrandSite) => brandBase(brand.slug)
 export const serviceSlug = (title: string) => title.normalize('NFKD').toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 export const getBrand = (slug: string) => brandSites.find((brand) => brand.slug === slug)
 export const getBrandService = (brand: BrandSite, slug: string) => brand.services.find((title) => serviceSlug(title) === slug)

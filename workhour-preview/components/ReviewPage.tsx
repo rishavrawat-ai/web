@@ -1,3 +1,5 @@
+import PageBanner from './PageBanner'
+import { pageVisuals } from '../data/page-visuals'
 import Image from 'next/image'
 import Link from 'next/link'
 import { businesses, globalExpansion, media, services } from '../data/content'
@@ -45,11 +47,11 @@ function AboutPage() {
 
 function PageIntro({ kind }: { kind: PageKind }) {
   const content = pageCopy[kind]
-  return <><p className="eyebrow teal">Workhour Business</p><h1>{content.title}</h1><p className="review-intro">{content.intro}</p></>
+  return <PageBanner title={content.title} description={content.intro} {...pageVisuals[kind]} />
 }
 
 function BusinessesPage() {
-  return <div className="review-business-list">{brandSites.map((brand, index) => { const business = businesses.find(item => item.slug === brand.slug)!; return <article key={brand.slug}><div className="business-list-image"><Image src={brand.image} alt={`${brand.name} illustrative scene`} fill sizes="(max-width: 700px) 100vw, 30vw" /></div><div><p className="eyebrow teal">Business {String(index + 1).padStart(2, '0')} / 07</p><h2>{business.name}</h2><p>{homepageBusinessIntros[business.slug] ?? business.intro}</p><Link className="text-link" href={brandHref(brand)}>Explore {brand.name} <span aria-hidden="true">↗</span></Link></div></article> })}</div>
+  return <div className="review-business-list">{brandSites.map((brand, index) => { const business = businesses.find(item => item.slug === brand.slug)!; return <article key={brand.slug}><div className="business-list-image"><Image src={brand.image} alt={`${brand.name} illustrative scene`} fill sizes="(max-width: 700px) 100vw, 30vw" /></div><div><p className="eyebrow teal">Business {String(index + 1).padStart(2, '0')} / 07</p><h2>{business.name}</h2><p>{homepageBusinessIntros[business.slug] ?? business.intro}</p><Link className="text-link" href={`/businesses/${brand.slug}`}>Explore {brand.name} <span aria-hidden="true">↗</span></Link></div></article> })}</div>
 }
 
 function CareersPage() {
@@ -74,9 +76,9 @@ function GlobalPresencePage() {
 }
 
 export default function ReviewPage({ kind }: { kind: PageKind }) {
-  return <><MainHeader /><main className="review-page"><div className="review-inner"><PageIntro kind={kind} />{kind === 'about' && <AboutPage />}{kind === 'businesses' && <BusinessesPage />}{kind === 'careers' && <CareersPage />}{kind === 'contact' && <ContactPage />}{kind === 'announcements' && <AnnouncementPage />}{kind === 'news-media' && <NewsMediaPage />}{kind !== 'contact' && kind !== 'about' && <section className="page-next-step"><h2>Explore the Workhour Business group.</h2><Link className="button button-dark" href="/businesses">Explore businesses <span aria-hidden="true">↗</span></Link></section>}</div></main><MainFooter /></>
+  return <><MainHeader /><main className="review-page banner-page"><PageIntro kind={kind} /><div className="review-inner">{kind === 'about' && <AboutPage />}{kind === 'businesses' && <BusinessesPage />}{kind === 'careers' && <CareersPage />}{kind === 'contact' && <ContactPage />}{kind === 'announcements' && <AnnouncementPage />}{kind === 'news-media' && <NewsMediaPage />}{kind !== 'contact' && kind !== 'about' && <section className="page-next-step"><h2>Explore the Workhour Business group.</h2><Link className="button button-dark" href="/businesses">Explore businesses <span aria-hidden="true">↗</span></Link></section>}</div></main><MainFooter /></>
 }
 
 export function MainGlobalPresence() {
-  return <><MainHeader /><main className="review-page"><div className="review-inner"><PageIntro kind="global-presence" /><GlobalPresencePage /></div></main><MainFooter /></>
+  return <><MainHeader /><main className="review-page banner-page"><PageIntro kind="global-presence" /><div className="review-inner"><GlobalPresencePage /></div></main><MainFooter /></>
 }

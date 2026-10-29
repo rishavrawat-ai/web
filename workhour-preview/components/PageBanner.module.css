@@ -1,0 +1,12 @@
+.banner{position:relative;isolation:isolate;background:#0c293b;color:#fff;overflow:hidden}
+.image{object-fit:cover;object-position:60% 42%;z-index:-2}
+.shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#071f33f5 0%,#071f33d9 35%,#071f3370 67%,#071f3325),linear-gradient(0deg,#071f3370,transparent)}
+.inner{width:min(1280px,88%);margin:auto}
+.breadcrumb{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:25px 0;font:12px/1.6 Arial,Helvetica,sans-serif;color:#d7e5e8}
+.breadcrumb a:hover{color:#9ae0cc}
+.copy{padding:40px 0 60px;max-width:720px}
+.banner .eyebrow{font:700 11px/1.5 Arial,Helvetica,sans-serif;text-transform:uppercase;letter-spacing:.16em;color:#9ae0cc;margin:0 0 20px}
+.banner .title{font:600 clamp(40px,4.8vw,68px)/1.08 Arial,Helvetica,sans-serif;letter-spacing:-.045em;color:#fff;margin:0 0 24px;overflow-wrap:normal;text-wrap:balance;max-width:720px}
+.banner .description{font:400 17px/1.75 Arial,Helvetica,sans-serif;color:#e1eaed;max-width:610px;margin:0}
+.banner a:focus-visible{outline:3px solid #9ae0cc;outline-offset:5px}
+@media(max-width:700px){.inner{width:calc(100% - 40px)}.breadcrumb{padding:20px 0;font-size:11px;gap:8px}.copy{padding:28px 0 40px}.banner .title{font-size:clamp(36px,9vw,52px)}.banner .description{font-size:15px;line-height:1.7}.image{object-position:65% center}.shade{background:linear-gradient(90deg,#071f33eb,#071f33ac),linear-gradient(0deg,#071f3380,transparent)}}

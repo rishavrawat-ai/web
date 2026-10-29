@@ -1,0 +1,389 @@
+{
+  "results": [
+    {
+      "route": "/",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/businesses",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/businesses/remunerax",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/businesses/go-travel-global",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services/website-designing",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services/content-animation",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services/seo-marketing",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/brands/remunerax",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/brands/remunerax/services",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/brands/remunerax/services/payroll-processing",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/careers",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/contact",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/announcements",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/news-media",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/global-presence",
+      "width": 1440,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/businesses",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/businesses/remunerax",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/businesses/go-travel-global",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services/website-designing",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services/content-animation",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services/seo-marketing",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/brands/remunerax",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/brands/remunerax/services",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/brands/remunerax/services/payroll-processing",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/careers",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/contact",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/announcements",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/news-media",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/global-presence",
+      "width": 768,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/businesses",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/businesses/remunerax",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/businesses/go-travel-global",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services/website-designing",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services/content-animation",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/services/seo-marketing",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/brands/remunerax",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/brands/remunerax/services",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/brands/remunerax/services/payroll-processing",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/careers",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/contact",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/announcements",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/news-media",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    },
+    {
+      "route": "/global-presence",
+      "width": 390,
+      "status": 200,
+      "overflow": false,
+      "broken": [],
+      "h1": 1
+    }
+  ],
+  "errors": []
+}

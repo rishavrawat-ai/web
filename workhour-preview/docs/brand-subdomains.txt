@@ -1,0 +1,9 @@
+Brand subdomain activation
+
+The seven existing brand sites retain their /brands/<slug> URLs until a parent domain is supplied.
+Connect the parent domain and wildcard subdomain to this Vercel project using the DNS records Vercel provides.
+Set NEXT_PUBLIC_BRAND_DOMAIN to the parent hostname (no scheme or path).
+Set NEXT_PUBLIC_GROUP_ORIGIN to the main corporate website origin, including https://.
+Redeploy. Brand links then target https://<slug>.<parent-domain> and proxy.ts serves each existing brand site at its own root, preserving internal service paths.
+Portfolio links remain on the corporate site; every brand footer links back to its portfolio page.
+Do not enable these variables before DNS/domain verification succeeds.

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { heroSlides, homepageBusinessOrder, values } from '../data/content'
-import { businesses, media, services } from '../data/content'
+import { businesses, services } from '../data/content'
 import { brandSites, brandHref } from '../data/brand-sites'
 import MainHeader from './MainHeader'
 import MainFooter from './MainFooter'
@@ -43,9 +43,7 @@ function BusinessShowcase() {
 
 function Values() { const icons: VisualIconName[] = ['resilience', 'innovation', 'legacy']; return <section className="values-section"><div className="values-head section-pad"><p className="eyebrow teal">What moves us</p><h2>The work is complex.<br /><em>The direction is clear.</em></h2></div><div className="value-grid">{values.map((value, index) => <article className={`value value-${index}`} key={value.display}><div className="value-meta"><span className="value-no">0{index + 1}</span><VisualIcon name={icons[index]} className="value-icon" /></div><h3>{value.display}</h3><p>{value.text}</p></article>)}</div></section> }
 
-function MediaSection() {
-  return <><IgnitiaFeature /><section className="media-section section-pad"><div className="media-head"><div><p className="eyebrow teal">News &amp; media</p><h2>Ideas worth<br /><em>carrying forward.</em></h2></div><Link className="text-link" href="/news-media">Explore the archive <Arrow /></Link></div><div className="media-grid">{media.filter((item) => item.slug !== 'ignita').map((item) => <article className={`media-card ${item.tone}`} key={item.slug}><div className="media-visual"><Image src={item.image} alt={item.alt} fill sizes="(max-width: 700px) 100vw, 33vw" /></div><p className="eyebrow">{item.kicker}</p><h3>{item.title}</h3><p>{item.text}</p><Link className="text-link" href={item.href}>{item.link} <Arrow /></Link></article>)}</div></section></>
-}
+function MediaSection() { return <IgnitiaFeature /> }
 
 function ServiceLinks() { return <section className="home-services section-pad"><p className="eyebrow teal">Workhour Business services</p><h2>Expertise for the next step.</h2><p className="home-services-intro">Explore digital design, animation, and marketing support for your business.</p><div className="home-service-grid">{services.map((service) => <Link className="home-service-card" key={service.slug} href={`/services/${service.slug}`}><span className="home-service-image"><Image src={serviceArtwork[service.slug]} alt={`${service.title} illustrative artwork`} fill sizes="(max-width: 700px) 100vw, 33vw" /></span><span className="home-service-content"><VisualIcon name={getServiceIcon(service.title)} className="home-service-icon" /><strong>{service.title}</strong><span className="home-service-cta">Explore service <Arrow /></span></span></Link>)}</div></section> }
 
