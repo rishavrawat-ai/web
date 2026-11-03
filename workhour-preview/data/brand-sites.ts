@@ -1,5 +1,5 @@
 import { brandBase } from './brand-domains'
-import { businesses } from './content'
+import { businesses, portfolioBusinessOrder } from './content'
 import { businessContent } from './business-content'
 
 export type BrandSite = {
@@ -13,7 +13,7 @@ export type BrandSite = {
   mark: string
 }
 
-export const brandSites: BrandSite[] = [
+const brandDefinitions: BrandSite[] = [
   { slug: 'inceptura', name: 'Inceptura', strapline: 'Ideation to Execution', menuLabel: 'Offerings', includeReach: true, image: '/business-inceptura.webp', mark: 'IN', services: ['Company Registration & Compliance', 'Business Strategy & Growth Planning', 'Talent Acquisition', 'Event Management', 'Travel & Logistics', 'International Expansions', 'Revenue Checks & Performance Monitoring'] },
   { slug: 'employaa', name: 'Employaa', strapline: 'Recruitment and staffing', menuLabel: 'Services', includeReach: true, image: '/business-employaa.webp', mark: 'EM', services: ['Permanent Hiring', 'Contract Hiring', 'IT/Tech Staffing', 'RPO', 'Campus Hiring', 'Bulk Hiring', 'GIG / Industry Specific'] },
   { slug: 'remunerax', name: 'Remunerax', strapline: 'Payroll and workforce outsourcing', menuLabel: 'Services', includeReach: false, image: '/business-remunerax.webp', mark: 'RE', services: ['Payroll Processing', 'Statutory Compliances', 'Tax Management', 'Employee Self Service Portal', 'Full & Final Settlement', 'Support for Contractual'] },
@@ -22,6 +22,8 @@ export const brandSites: BrandSite[] = [
   { slug: 'thinkrunspace', name: 'ThinkRunSpace', strapline: 'Flexible workspace solutions', menuLabel: 'Offerings', includeReach: true, image: '/business-thinkrunspace.webp', mark: 'TR', services: ['Serviced & Managed offices', 'Co-Working Spaces', 'Virtual Office Solutions', 'Meeting Rooms & Business Infra'] },
   { slug: 'leaders-pinnacle', name: 'Leaders Pinnacle', strapline: 'B2B events and market intelligence', menuLabel: 'Services', includeReach: true, image: '/business-leaders-pinnacle.webp', mark: 'LP', services: ['Strategic Conferences', 'Trade Expos & Exhibitions', 'Bespoke Corporate Events', 'Webinars & Virtual Events', 'Podcast & Content Series'] },
 ]
+
+export const brandSites: BrandSite[] = portfolioBusinessOrder.map(slug => brandDefinitions.find(brand => brand.slug === slug)!)
 
 export const brandHref = (brand: BrandSite) => brandBase(brand.slug)
 export const serviceSlug = (title: string) => title.normalize('NFKD').toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')

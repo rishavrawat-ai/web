@@ -20,7 +20,7 @@ export const aboutSections: AboutSection[] = [
     image: '/about-story-v2.webp', alt: 'Illustrative specialists walking and talking in a contemporary shared workspace',
     heading: 'One group. Seven specialist businesses.',
     paragraphs: [
-      'Workhour Business brings together seven specialist businesses: Inceptura, Employaa, Remunerax, Go Travel Global, Elevatrain, ThinkRunSpace, and Leaders Pinnacle.',
+      'Workhour Business brings together seven specialist businesses: Inceptura, Leaders Pinnacle, Employaa, Elevatrain, Go Travel Global, Remunerax, and ThinkRunSpace.',
       'Together, their service areas span business planning, recruitment, payroll administration, travel, corporate learning, flexible workspaces, and professional events.',
     ],
     pillars: [],

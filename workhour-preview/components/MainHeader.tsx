@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import SearchButton from './SearchButton'
 import { brandHref, brandSites } from '../data/brand-sites'
-import { homepageBusinessOrder, services } from '../data/content'
+import { portfolioBusinessOrder, services } from '../data/content'
 
-const portfolioBrands = homepageBusinessOrder.map(slug => brandSites.find(brand => brand.slug === slug)!)
+const portfolioBrands = portfolioBusinessOrder.map(slug => brandSites.find(brand => brand.slug === slug)!)
 
 function NavDropdown({ label, active, onOpen, onClose, onNavigate, children }: {
   label: string

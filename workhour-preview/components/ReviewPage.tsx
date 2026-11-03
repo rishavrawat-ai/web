@@ -32,7 +32,7 @@ function AboutPage() {
     {aboutSections.map(({ id, title }) => <section className={`about-content ${aboutStyles.section}`} id={id} key={id}>
       <p className="eyebrow teal">Workhour Business</p>
       <h2>{title}</h2>
-      {id === 'history' && <><p>Workhour Business brings together seven specialist businesses: Inceptura, Employaa, Remunerax, Go Travel Global, Elevatrain, ThinkRunSpace, and Leaders Pinnacle.</p><p>Together, their service areas span business planning, recruitment, payroll administration, travel, corporate learning, flexible workspaces, and professional events.</p></>}
+      {id === 'history' && <><p>Workhour Business brings together seven specialist businesses: Inceptura, Leaders Pinnacle, Employaa, Elevatrain, Go Travel Global, Remunerax, and ThinkRunSpace.</p><p>Together, their service areas span business planning, recruitment, payroll administration, travel, corporate learning, flexible workspaces, and professional events.</p></>}
       {id === 'vision-mission' && <div className={aboutStyles.pairGrid}><article><p className="eyebrow">Our Vision</p><p>{globalExpansion.vision}</p></article><article><p className="eyebrow">Our Mission</p><p>{globalExpansion.mission}</p></article></div>}
       {id === 'core-values' && <div className={aboutStyles.valuesGrid}>{globalExpansion.values.map((value) => <article key={value.title}><h3>{value.title}</h3><p>{value.text}</p></article>)}</div>}
       {id === 'impact' && <><p>Our aim is to make complex business needs easier to navigate by connecting organizations with focused expertise across the business journey.</p><p>Each brand concentrates on a distinct area of work, so organizations can explore the support relevant to their current priorities.</p></>}

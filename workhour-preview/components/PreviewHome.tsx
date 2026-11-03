@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { heroSlides, homepageBusinessOrder, values } from '../data/content'
+import { heroSlides, portfolioBusinessOrder, values } from '../data/content'
 import { businesses, services } from '../data/content'
 import { brandSites, brandHref } from '../data/brand-sites'
 import MainHeader from './MainHeader'
@@ -11,7 +11,7 @@ import MainFooter from './MainFooter'
 import IgnitiaFeature from './IgnitiaFeature'
 import VisualIcon, { getServiceIcon, type VisualIconName } from './VisualIcon'
 
-const homeBusinesses = homepageBusinessOrder.map((slug) => ({ ...businesses.find((item) => item.slug === slug)!, brand: brandSites.find((item) => item.slug === slug)! }))
+const homeBusinesses = portfolioBusinessOrder.map((slug) => ({ ...businesses.find((item) => item.slug === slug)!, brand: brandSites.find((item) => item.slug === slug)! }))
 const businessIcons: Record<string, VisualIconName> = { inceptura: 'strategy', employaa: 'people', remunerax: 'payroll', 'go-travel-global': 'travel', elevatrain: 'learning', thinkrunspace: 'workspace', 'leaders-pinnacle': 'events' }
 const serviceArtwork: Record<string, string> = { 'website-designing': '/service-web-design.webp', 'content-animation': '/service-content-motion.webp', 'seo-marketing': '/service-search-growth.webp' }
 

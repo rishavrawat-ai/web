@@ -3,7 +3,7 @@ import Link from 'next/link'
 import MainHeader from './MainHeader'
 import MainFooter from './MainFooter'
 import { aboutSections, type AboutSection } from '../data/about'
-import { businesses, globalPresence, homepageBusinessOrder } from '../data/content'
+import { businesses, globalPresence, portfolioBusinessOrder } from '../data/content'
 import { brandHref, brandSites } from '../data/brand-sites'
 import styles from './AboutExperience.module.css'
 
@@ -14,7 +14,7 @@ function Photo({ src, alt, className = '' }: { src: string; alt: string; classNa
 function BusinessDirectory() {
   return <section className={styles.directory} aria-labelledby="business-heading">
     <div><p className={styles.eyebrow}>Specialists, together</p><h2 id="business-heading">One group.<br />Seven areas of expertise.</h2><p>Distinct businesses. Focused capabilities. Support for different stages of your business journey.</p><Link className={styles.textLink} href="/businesses">Explore our portfolio <Arrow /></Link></div>
-    <div className={styles.businessList}>{homepageBusinessOrder.map((slug, index) => {
+    <div className={styles.businessList}>{portfolioBusinessOrder.map((slug, index) => {
       const brand = brandSites.find(item => item.slug === slug)!
       const business = businesses.find(item => item.slug === slug)!
       return <Link href={brandHref(brand)} key={slug}><span className={styles.number}>0{index + 1}</span><span><strong>{business.name}</strong><small>{brand.strapline}</small></span><Arrow /></Link>
