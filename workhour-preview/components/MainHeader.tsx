@@ -5,7 +5,9 @@ import Link from 'next/link'
 import { useEffect, useRef, useState, type ReactNode } from 'react'
 import SearchButton from './SearchButton'
 import { brandHref, brandSites } from '../data/brand-sites'
-import { services } from '../data/content'
+import { homepageBusinessOrder, services } from '../data/content'
+
+const portfolioBrands = homepageBusinessOrder.map(slug => brandSites.find(brand => brand.slug === slug)!)
 
 function NavDropdown({ label, active, onOpen, onClose, onNavigate, children }: {
   label: string
@@ -56,8 +58,8 @@ export default function MainHeader() {
     onNavigate: closeNavigation,
   })
   return <header ref={header} className="site-header managed-navigation"><Link href="/" className="brand" aria-label="Workhour Business home"><Image src="/workhour-business-logo.jpeg" alt="Workhour Business" width={534} height={111} priority /></Link><button className="menu-toggle" onClick={() => { setOpen(!open); setActiveDropdown(null) }} aria-expanded={open} aria-controls="main-navigation" aria-label={open ? 'Close navigation' : 'Open navigation'}>{open ? 'Close' : 'Menu'}</button><nav id="main-navigation" className={open ? 'nav open' : 'nav'} aria-label="Main navigation">
-    <NavDropdown {...dropdownProps("About Us")}><Link href="/about/our-story">Our Story</Link><Link href="/about/our-impact">Our Impact</Link><Link href="/about/responsible-business">Responsible Business</Link><Link href="/about/presence">Presence</Link></NavDropdown>
-    <NavDropdown {...dropdownProps("Portfolio")}><Link href="/businesses">All businesses</Link>{brandSites.map(brand => <Link href={`/businesses/${brand.slug}`} key={brand.slug}>{brand.name}</Link>)}</NavDropdown>
+    <NavDropdown {...dropdownProps("About Us")}><Link href="/about">About WHB</Link><Link href="/about/our-story">Our Story</Link><Link href="/about/our-impact">Our Impact</Link><Link href="/about/responsible-business">Responsible Business</Link><Link href="/about/presence">Presence</Link></NavDropdown>
+    <NavDropdown {...dropdownProps("Portfolio")}><Link href="/businesses">All businesses</Link>{portfolioBrands.map(brand => <Link href={`/businesses/${brand.slug}`} key={brand.slug}>{brand.name}</Link>)}</NavDropdown>
     <NavDropdown {...dropdownProps("Services")}><Link href="/services">All services</Link>{services.map(service => <Link href={`/services/${service.slug}`} key={service.slug}>{service.title}</Link>)}</NavDropdown>
     <NavDropdown {...dropdownProps("Brand sites")}>{brandSites.map(brand => <Link href={brandHref(brand)} key={brand.slug}>{brand.name}</Link>)}</NavDropdown>
     <Link className="nav-link" href="/announcements" onClick={closeNavigation}>Announcement</Link><Link className="nav-link" href="/careers" onClick={closeNavigation}>Careers</Link><Link className="nav-link" href="/news-media" onClick={closeNavigation}>News &amp; Media</Link><Link className="nav-link" href="/global-presence" onClick={closeNavigation}>Global Presence</Link>
