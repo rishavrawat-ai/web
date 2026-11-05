@@ -72,7 +72,7 @@ function NewsMediaPage() {
 }
 
 function GlobalPresencePage() {
-  return <section className="global-presence-content"><p className="eyebrow teal">Markets named in planning material</p><h2>Global presence</h2><p>These country groupings reflect supplied planning material. They do not confirm an office, city location, or active service availability.</p><PresenceMap /></section>
+  return <section className="global-presence-content"><p className="eyebrow teal">Markets named in planning material</p><h2>Global presence</h2><p>These country groupings reflect supplied planning material.</p><PresenceMap /></section>
 }
 
 export default function ReviewPage({ kind }: { kind: PageKind }) {
