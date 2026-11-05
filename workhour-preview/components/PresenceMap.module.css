@@ -22,7 +22,7 @@
 .pin:focus-visible { outline: 2px solid #168c84; outline-offset: 4px; border-radius: 10px; }
 .pinLabel { position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); padding: 6px 9px; border-radius: 4px; background: #071a31; color: white; font-size: 12px; white-space: nowrap; pointer-events: none; }
 .key { display: flex; align-items: center; gap: 9px; margin-top: 12px; color: #5e7379; font-size: 12px; }
-.key span { flex: 0 0 12px; width: 12px; height: 12px; border-radius: 2px; background: #3ca99d; }
+.key span { flex: 0 0 12px; width: 12px; height: 12px; border-radius: 2px; background: #071a31; }
 .tooltip { display: flex; flex-direction: column; gap: 3px; min-height: 58px; margin: 14px 0 0; padding: 11px 13px; border-left: 3px solid #2baaa3; background: #eff7f4; color: #597077; font-size: 12px; line-height: 1.45; }
 .tooltip strong { color: #071a31; font-size: 13px; }
 .countryList { min-width: 0; }
@@ -35,13 +35,12 @@
 .countryButton { display: flex; width: 100%; min-height: 39px; align-items: center; justify-content: space-between; gap: 5px; padding: 6px 8px; border: 1px solid #e0e9e6; background: #fff; color: #233c48; text-align: left; font-size: 12px; }
 .countryButton:hover, .countryButton[aria-pressed='true'] { border-color: #2baaa3; background: #eef7f3; }
 .countryButton:focus-visible { outline: 3px solid #168c84; outline-offset: 2px; }
-.disclaimer { margin: 18px 0 0; color: #697d81; font-size: 11px; line-height: 1.55; }
 
 @media (max-width: 900px) {
   .map, .compact { grid-template-columns: minmax(0, 1fr); gap: 25px; }
   .map { padding: clamp(18px, 4vw, 30px); }
   .countryList { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 20px; }
-  .listHeading, .disclaimer { grid-column: 1 / -1; }
+  .listHeading { grid-column: 1 / -1; }
   .region { margin-top: 3px; }
 }
 
